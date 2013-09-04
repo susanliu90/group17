@@ -3,6 +3,6 @@ $(document).ready(function(){
     });
 
     function refreshTable(){
-        $('#tas').load('displayTA.php');
+        $('#tas').load('displayTAs.php');
     });
 }
