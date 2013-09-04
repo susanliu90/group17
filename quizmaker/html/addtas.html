@@ -132,77 +132,33 @@
 					<th class="span3 align-center roster-title">Name</td>
 					<th class="span3 align-center roster-title">Email</td>
 					<th class="span3 align-center roster-title">Course</td>
-					<th class="span3 roster-title align-center">Password</td>
+					<th class="span3 roster-title align-center">Info</td>
 					<th class="span3 align-center roster-title">Delete</td>
 				</tr>
 				<tr>
-					<td class="span3 align-center">Wilson Guo</td>
-					<td class="span3 align-center">hello@ucsd.edu</td>
-					<td class="span3 align-center">CSE 134B</td>
-					<td class="span3 align-center">
-						<input type="button" class="btn btn-primary btn-small" value="Reset">
+					<td>
 					</td>
-					<td class="span3 align-center"><a href="#"><i class="icon-trash"></i></a></td>
-				</tr>
-				<tr>
-					<td class="span3 align-center">John Chang</td>
-					<td class="span3 align-center">hi@ucsd.edu</td>
-					<td class="span3 align-center">CSE 135</td>
-					<td class="span3 align-center">
-						<input type="button" class="btn btn-primary btn-small" value="Reset">
-					</td>
-					<td class="span3 align-center"><a href="#"><i class="icon-trash"></i></a></td>
-				</tr>
-				<tr>
-					<td class="span3 align-center">Louis Wong</td>
-					<td class="span3 align-center">bonjour@ucsd.edu</td>
-					<td class="span3 align-center">CSE 135</td>
-					<td class="span3 align-center">
-						<input type="button" class="btn btn-primary btn-small" value="Reset">
-					</td>
-					<td class="span3 align-center"><a href="#"><i class="icon-trash"></i></a></td>
-				</tr>
-				<tr>
-					<td class="span3 align-center">Susan Liu</td>
-					<td class="span3 align-center">ciao@ucsd.edu</td>
-					<td class="span3 align-center">CSE 136</td>
-					<td class="span3 align-center">
-						<input type="button" class="btn btn-primary btn-small" value="Reset">
-					</td>
-					<td class="span3 align-center"><a href="#"><i class="icon-trash"></i></a></td>
 				</tr>
 			</table>
 		</div>
 		<div class="hero-unit">
-			<h3>Add New TAs</h3>
+			<h3>Add New TA</h3>
 			<table id="TA">
 				<tr>
-					<th class="span3 align-center roster-title" name="lastName">Last Name</td>
-					<th class="span3 align-center roster-title" name="firstName">First Name</td>
 					<th class="span3 align-center roster-title" name="email">Email</td>
-					<th class="span3 align-center roster-title" name="course">Course</td>
+					<th class="span3 align-center roster-title" name="course_num">Course</td>
 				</tr>
 				<tr>
 					<td>
-						<input type="text" name="lastName" placeholder="Last name">
+						<input type="text" name="email" placeholder="email">
 					</td>
 					<td>
-						<input type="text" name="firstName" placeholder="First name">
-					</td>
-					<td>
-						<input type="text" name="email" placeholder="TA email">
-					</td>
-					<td style="text-align: center">
-						<select name"course">
-							<option value="CSE 134B" name="course">CSE 134B</option>
-							<option value="CSE 135"  name="course">CSE 135</option>
-							<option value="CSE 136"  name="course">CSE 136</option>
-						</select>
+						<input type="text" name="course_num" placeholder="course">
 					</td>
 				</tr>
 			</table>
-			<input type="button" class="btn btn-primary" value="Add another TA" onclick="addTA('TA')">
-			<input type="button" class="btn btn-primary" value="Submit">
+			<input type="button" class="btn btn-primary" value="Add TA" action="insertTA.php" method="POST">
+			<input type="button" class="btn btn-primary" value="Delete TA" action="deleteTA.php" method="POST">
 		</div>
 	</div>	  
 </body>
