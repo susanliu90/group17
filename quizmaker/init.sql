@@ -61,7 +61,6 @@
 		f INT,
 		primary key (grades_id)
 	);
-
   	CREATE TABLE professor_list
 	(
 		proflist_id INT AUTO_INCREMENT,
@@ -69,7 +68,6 @@
 		course_num VARCHAR(50),
 		primary key (proflist_id)
 	);
-
  	CREATE TABLE ta_list
 	(
 		talist_id INT AUTO_INCREMENT,
@@ -77,17 +75,13 @@
 		course_num VARCHAR(50),
 		primary key (talist_id)
 	);
-
-
-   CREATE TABLE student_list
+   	CREATE TABLE student_list
 	(
 		studentlist_id INT AUTO_INCREMENT,
 		student_id INT,
 		course_num VARCHAR(50),
 		primary key (studentlist_id)
 	);
-
-
   	CREATE TABLE quiz_list
 	(
 		quizlist_id INT AUTO_INCREMENT,
@@ -95,8 +89,6 @@
 		course_num VARCHAR(50),
 		primary key (quizlist_id)
 	);
-
-
   	CREATE TABLE quiz
 	(
 		quiz_id INT AUTO_INCREMENT,
@@ -117,8 +109,6 @@
 		feedback VARCHAR(150),
 		primary key (mcsingle_id)
 	);
-
-
  	CREATE TABLE mcmultiple_list
 	(
 		mcmultiple_id INT AUTO_INCREMENT,
@@ -131,7 +121,6 @@
 		feedback VARCHAR(150),
 		primary key (mcmultiple_id)
 	);
-	
   	CREATE TABLE tf_list
 	(
 		tf_id INT AUTO_INCREMENT,
@@ -139,26 +128,20 @@
 		answer VARCHAR(50),
 		primary key (tf_id)
 	);
-
-
-   CREATE TABLE fillinblank_list
+   	CREATE TABLE fillinblank_list
 	(
 		fillinblank_id INT AUTO_INCREMENT,
 		question VARCHAR(50),
 		answer VARCHAR(50),
 		primary key (fillinblank_id)
 	);
-
-
-   CREATE TABLE simpleanswer_list
+   	CREATE TABLE simpleanswer_list
 	(
 		simpleanswer_id INT AUTO_INCREMENT,
 		question VARCHAR(50),
 		answer VARCHAR(50),
 		primary key (simpleanswer_id)
 	);
-
-
   	CREATE TABLE shortanswer_list
 	(
 		shortanswer_id INT AUTO_INCREMENT,
@@ -166,8 +149,6 @@
 		answer VARCHAR(50),
 		primary key (shortanswer_id)
 	);
-
-
  	CREATE TABLE comment
 	(
 		comment_id INT AUTO_INCREMENT,
