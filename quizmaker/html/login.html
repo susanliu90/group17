@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'> 
+		<title>QUIZZLER: Log In</title>
+		<!-- CSS files -->
+		<link rel="stylesheet" href="../css/jquery-ui.css" />
+		<link rel="stylesheet" href="../css/bootstrap.css" >
+		<link rel="stylesheet" href="../css/bootstrap-responsive.css">
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap-modal.css">
+		<link rel="stylesheet" href="../css/builder.css" />
+
+	</head>
+
+	<body>
+		
+		<nav class="go-back-home">
+			<a href="../homepage.html">Home</a>
+		</nav>
+
+		<header id="branding">
+			<img src= "../img/logo2.png" alt="logo for the quizzler" >
+		</header>
+		
+		<div id="login-box">
+			<h3>Log In (Perl)</h3>
+			<div class="login">
+				<form name="perlinput" action="../pl/post.pl" method="post">
+					<b>Email:</b>
+					<br>
+					<input type="email" name="email"><br>
+					<b>Password:</b>
+					<br>
+					<input type="password" name="pwd">
+					<br>
+					<input type="submit" value="Submit" class="btn">
+
+				</form>
+			</div>
+			<p>
+				<a href="../html/register.html">Don't have an account?</a>
+				<br>
+				<a href="../html/recover.html">Forgot password?</a>
+			</p>
+
+			<h3>Log In (PHP)</h3>
+			<div class="login">
+				<form name="input" action="../php/login.php" method="post">
+					<b>Email:</b>
+					<br>
+					<input type="email" name="email"><br>
+					<b>Password:</b>
+					<br>
+					<input type="password" name="pwd">
+					<br>
+					<input type="submit" value="Submit" class="btn">
+				</form>
+			</div>
+			<p>
+				<a href="../html/register.html">Don't have an account?</a>
+				<br>
+				<a href="../html/recover.html">Forgot password?</a>
+			</p>
+
+			<h3>Log In (Python)</h3>
+			<div class="login">
+				<form name="input" action="../py/login.py" method="post">
+					<b>Email:</b>
+					<br>
+					<input type="email" name="email"><br>
+					<b>Password:</b>
+					<br>
+					<input type="password" name="pwd">
+					<br>
+					<input type="submit" value="Submit" class="btn">
+				</form>
+			</div>
+			<p>
+				<a href="../html/register.html">Don't have an account?</a>
+				<br>
+				<a href="../html/recover.html">Forgot password?</a>
+			</p>
+		</div>
+	</body>
+</html>

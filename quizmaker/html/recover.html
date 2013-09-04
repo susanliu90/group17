@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'> 
+		<title>QUIZZLER: Recover Password</title>
+		<!-- CSS files -->
+		<link rel="stylesheet" href="../css/jquery-ui.css" />
+		<link rel="stylesheet" href="../css/bootstrap.css" >
+		<link rel="stylesheet" href="../css/bootstrap-responsive.css">
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap-modal.css">
+		<link rel="stylesheet" href="../css/builder.css" />
+
+		<!-- JS files -->
+		<script src="../js/135.js"></script>
+
+		<nav class="go-back-home">
+			<a href="../homepage.html">Home</a>
+		</nav>
+
+		<header id="branding">
+			<img src= "../img/logo2.png" alt="logo for the quizzler" >
+		</header>
+	</head>
+
+	<body>
+		<div id="login-box">
+			<h3>Password Recovery</h3>
+			<div id="login">
+				<!-- action="../php/recover.php" -->
+				<form id="recover" name="input" method="post">
+					<div class="fields">
+					 	Email:<br><input type="text" name="email"><br>
+					</div>
+		    		<div class="fields">
+						<input type="button" value="Submit" onclick="email_sent()">
+					</div>
+				</form>
+			</div>
+			<div id="login-blank">
+				<p>Your new password is on its way! Please check your email.</p>
+			</div>
+			<p>
+				<a href="../html/login.html">Remember your password?</a>
+				<br>
+				<a href="../html/register.html">Don't have an account?</a>
+			</p>
+		</div>
+	</body>
+</html>

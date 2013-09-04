@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8"/>
+  	<title>Account Signup</title>
+  	<link rel="stylesheet" media="all" href="../css/builder.css" type="text/css"/>
+  	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> 
+	<!-- CSS files -->
+	<link rel="stylesheet" href="../css/jquery-ui.css" />
+	<link rel="stylesheet" href="../css/bootstrap.css" >
+	<link rel="stylesheet" href="../css/bootstrap-responsive.css">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap-modal.css">
+	<link rel="stylesheet" href="../css/builder.css" />
+
+
+
+
+  </head>
+  <body>
+  <wrapper>
+  	<header id="branding">
+	  <img src= "../img/logo2.png" alt="logo for the quizzler" >
+	</header>
+  	<nav class="go-back-home">
+		<a href="../homepage.html">Home</a>
+	</nav>
+ 	<div class="signup-box">
+	  <h3>Account Signup (PHP)</h3>
+		<div class="signup">
+		  <form name="input" action="../php/signup.php" method="post">
+		  	<div class="fields">
+				First name:<br><input type="text" name="firstname">
+			</div>
+			<div class="fields">
+			  	Last name:<br><input type="text" name="lastname">
+		    </div>
+			<div class="fields">
+			  	Email address:<br><input type="email" name="email">
+		    </div>
+		    <div class="fields">
+			  	Password:<br><input class="pwd" type="password" name="pwd">
+			</div>
+		    <div class="fields">
+			  	Confirm Password:<br><input id="pwdConfirm1" type="password" name="pwdConfirm">
+			</div>
+		    <div class="fields">
+		    	Account Type<br>
+		    	<select name="level">
+		    		<option value="admin">Administrator</option>
+		    		<option value="grader">TA/Grader</option>
+		    		<option value="student">Student</option>
+		   		</select>
+		    </div>
+		    <div class="fields">
+		    	Security Question<br>
+		    	<select name="securityq">
+		    		<option value="browser">What is your favorite browser?</option>
+		    		<option value="maiden">What is your mother's maiden name?</option>
+		    		<option value="crush">Who was your first crush?</option>
+		   		</select><br>
+		        Security Question Answer:<br><input class="answer" type="text" name="answer">
+		    </div>
+			<div class="fields">
+		      <input id="submit3" type="submit" value="Submit" class="btn">
+		    </div>
+		  </form>
+		</div>
+		<p>
+			<a href="../html/login.html">Already have an account?</a>
+		</p>
+	</div>
+	<div class="signup-box">
+	  <h3>Account Signup (Perl)</h3>
+		<div class="signup">
+		  <form name="input" action="../pl/register.pl" method="post">
+		  	<div class="fields">
+				First name:<br><input type="text" name="firstname">
+			</div>
+			<div class="fields">
+			  	Last name:<br><input type="text" name="lastname">
+		    </div>
+			<div class="fields">
+			  	Email address:<br><input type="email" name="email">
+		    </div>
+		    <div class="fields">
+			  	Password:<br><input class="pwd" type="password" name="pwd">
+			</div>
+		    <div class="fields">
+			  	Confirm Password:<br><input id="pwdConfirm" type="password" name="pwdConfirm">
+			</div>
+		    <div class="fields">
+		    	Account Type<br>
+		    	<select name="level">
+		    		<option value="admin">Administrator</option>
+		    		<option value="grader">TA/Grader</option>
+		    		<option value="student">Student</option>
+		   		</select>
+		    </div>
+		    <div class="fields">
+		    	Security Question<br>
+		    	<select name="securityq">
+		    		<option value="browser">What is your favorite browser?</option>
+		    		<option value="maiden">What is your mother's maiden name?</option>
+		    		<option value="crush">Who was your first crush?</option>
+		   		</select><br>
+		        Security Question Answer:<br><input class="answer" type="text" name="answer">
+		    </div>
+			<div class="fields">
+		      <input id="submit2" type="submit" value="Submit" class="btn">
+		    </div>
+		  </form>
+		</div>
+		<p>
+			<a href="../html/login.html">Already have an account?</a>
+		</p>
+	</div>
+<div class="signup-box">
+	  <h3>Account Signup (Python)</h3>
+		<div class="signup">
+		  <form name="input" action="../py/signup.py" method="post">
+		  	<div class="fields">
+				First name:<br><input type="text" name="firstname">
+			</div>
+			<div class="fields">
+			  	Last name:<br><input type="text" name="lastname">
+		    </div>
+			<div class="fields">
+			  	Email address:<br><input type="email" name="email">
+		    </div>
+		    <div class="fields">
+			  	Password:<br><input class="pwd" type="password" name="pwd">
+			</div>
+		    <div class="fields">
+			  	Confirm Password:<br><input class="pwdConfirm" type="password" name="pwdConfirm">
+			</div>
+		    <div class="fields">
+		    	Account Type<br>
+		    	<select name="level">
+		    		<option value="admin">Administrator</option>
+		    		<option value="grader">TA/Grader</option>
+		    		<option value="student">Student</option>
+		   		</select>
+		    </div>
+		    <div class="fields">
+		    	Security Question<br>
+		    	<select name="securityq">
+		    		<option value="browser">What is your favorite browser?</option>
+		    		<option value="maiden">What is your mother's maiden name?</option>
+		    		<option value="crush">Who was your first crush?</option>
+		   		</select><br>
+		        Security Question Answer:<br><input class="answer" type="text" name="answer">
+		    </div>
+			<div class="fields">
+		      <input id="submit1" type="submit" value="Submit" class="btn">
+		    </div>
+		  </form>
+		</div>
+		<p>
+			<a href="../html/login.html">Already have an account?</a>
+		</p>
+	</div>
+	</wrapper>
+  </body>
+</html>

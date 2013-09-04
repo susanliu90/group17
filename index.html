@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html>
+	<head>	
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="js/scripts.js"></script>
+		<link rel="icon" 
+      type="image/png" 
+      href="img/mustache.png">
+		<title>les programmeurs</title>
+
+	</head>
+
+	<body onload="hide_profiles()">
+		<div id="main-header">
+			<a href="index.html">
+				<img src="img/mustache.png" id="logo" alt="logo" />
+				<h1 id="group_name">les programmeurs</h1>
+			</a>
+		</div>
+		<table id="navbar">
+			<tr>
+				<td> 
+					<a onclick="showDivById('susan')"><strong>Susan Liu</strong></a>
+				</td>
+				<td>
+					<a onclick="showDivById('john')"><strong>John Chang</strong></a>
+				</td>
+				<td>
+					<a onclick="showDivById('wilson')"><strong>Wilson Guo</strong></a>
+				</td>
+				<td>
+					<a onclick="showDivById('louis')"><strong>Louis Wong</strong></a>
+				</td>
+			</tr>
+		</table>
+
+		<table id="container">
+			<tr>
+				<td>
+					<div id="about">
+						<div id="pledge-header">
+							<strong><em>C'est notre...</em></strong>
+						</div>
+
+						<div id="profile-header">
+							<strong><em>Je suis...</em></strong>
+						</div>
+
+						<div id="pledge">
+							<h2>Group 17 Pledge</h2>
+							<h4>Server-Side Web Languages</h4>
+							<h5>Pledge:</h5>
+							<p>
+								We all pledge to contribute equally to our assignments. If any one of us is caught slacking off, there will be severe consequences to pay. 
+							</p>
+						</div>
+
+						<div id="susan" class="profile">
+							<h2>Susan Liu</h2>
+							<img src="img/mustache.png" class="logo" alt="logo" />
+							<div class="desc">
+								<h4>Web Application Developer</h4>
+								<div class="about">
+									<h5>About me:</h5>
+									<p>
+										Hi! :) My name is Susan, and I'm in my last year of computer science! I love food, photography, travel, and all DIY projects. I'm always on the lookout to try something new. My best friend is sleep, and my worst enemy is time. That's about all for me in a nutshell!
+									</p>				
+								</div>
+							</div>
+							<h5>Email:</h5>
+							<p>
+								susanliu@mac.com
+							</p>
+						</div>
+
+						<div id="john" class="profile">
+							
+							<h2>John Chang</h2>
+							<img src="img/mustache.png" class="logo" alt="logo" />
+							<div class="desc">
+								<h4>Web Application Developer</h4>
+								<div class="about">
+									<h5>About me:</h5>
+									<p>
+										Welcome! My name is John Chang. I love swimming and surfing. Susan and Wilson were my tutors for cse 12 last summer. What a dream come true. I love soda, but I had to stop drinking soda, because I think I have diabetes =/ Now I need to get back to working on the github deployment mechanism. peace. 
+									</p>
+								</div>	
+							</div>
+							<h5>Email:</h5>
+							<p>
+								jjchang1223@gmail.com
+							</p>
+						</div>
+
+						<div id="wilson" class="profile">
+							
+							<h2>Wilson Guo</h2>
+							<img src="img/mustache.png" class="logo" alt="logo" />
+							<div class="desc">
+								<h4>Web Application Developer</h4>
+								<div class="about">
+									<h5>About me:</h5>
+									<p>
+										Hey everyone, my name is Wilson and I am a computer engineering major who is looking forward to graduating by the end of next year. I love to eat and I eat a lot and can probably eat more than you. Despite my major, I tend to fall out of the loop in terms of technology sometimes. I like the occasional run and enjoy playing strategy-based video games. Drawing is a favorite hobby of mine, which explains why I love to mess around with Photoshop from time to time.							
+									</p>
+								</div>
+							</div>
+							<h5>Email:</h5>
+							<p>
+								wilsong91@gmail.com
+							</p>
+						</div>
+
+						<div id="louis" class="profile">
+							<h2>Louis Wong</h2>
+							<img src="img/mustache.png" class="logo" alt="logo" />
+							<div class="desc">
+								<h4>Web Application Developer</h4>
+								<div class="about">
+									<h5>About me:</h5>
+									<p>
+										My name is Louis and my all-time favorite Pokemon is Bidoof.			
+									</p>
+								</div>
+							</div>
+							<h5>Email:</h5>
+							<p>
+								Louis1204@gmail.com
+							</p>
+						</div>
+
+						
+						<div id="like">
+							<button onclick="alert('Yay! ' + like_counter() + ' likes!');">like</button>
+						</div>
+
+						<div id="susan-action" class="action">
+							<button onclick="window.open('mailto:susanliu@mac.com?subject=CSE 135 Group 17')">email susan</button>
+							<button onclick="alert('Yay! ' + like_counter() + ' likes!');">like</button>
+						</div>
+
+						<div id="john-action" class="action">
+							<button onclick="window.open('mailto:jjchang1223@gmail.com?subject=CSE 135 Group 17')">email john</button>
+							<button onclick="alert('Yay! ' + like_counter() + ' likes!');">like</button>
+						</div>
+
+						<div id="wilson-action" class="action">
+							<button onclick="window.open('mailto:wilsong91@gmail.com?subject=CSE 135 Group 17')">email wilson</button>
+							<button onclick="alert('Yay! ' + like_counter() + ' likes!');">like</button>
+						</div>
+
+						<div id="louis-action" class="action">
+							<button onclick="window.open('mailto:Louis1204@gmail.com?subject=CSE 135 Group 17')">email louis</button>
+							<button onclick="alert('Yay! ' + like_counter() + ' likes!');">like</button>
+						</div>
+					</div>
+				</td>
+				<td id="pic-panel">
+					<div id="susan-pic" class="picture">
+						<h1>bonjour!</h1>
+						<img src="img/susan.jpg" id="susan_pic" alt="pic" />
+					</div>
+
+					<div id="john-pic" class="picture">
+						<h1>bonjour!</h1>
+						<img src="img/john.jpg" id="john_pic" alt="pic" />
+					</div>
+
+					<div id="wilson-pic" class="picture">
+						<h1>bonjour!</h1>
+						<img src="img/wilson.jpg" id="wilson_pic" alt="pic" />
+					</div>
+
+					<div id="louis-pic" class="picture">
+						<h1>bonjour!</h1>
+						<img src="img/louis.jpg" id="louis_pic" alt="pic" />
+					</div>
+
+				</td>
+			</tr>
+		</table>
+		<footer>
+		<section id="footer">
+			<strong>
+				<a href="http://classes.pint.com/cse135/">cse 135</a> -
+				<a href="http://classes.pint.com/cse135/">google groups</a> -
+				<a href="http://validator.w3.org/#validate_by_upload">validator</a> -
+				<a href="">&copy; les programmeurs 2013</a>
+			</strong>
+		</section>
+	</footer>
+
+	</body>
+
+	</html>

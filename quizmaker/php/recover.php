@@ -1,0 +1,1 @@
+<b>Email:</b> <?php echo $_POST["email"]; ?>

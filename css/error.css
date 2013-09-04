@@ -1,0 +1,37 @@
+html {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	background-color: #666666;
+	background-image: url("../img/mustache.png");
+	background-position: left top;
+/*	background-size: 100% 100%;*/
+	color: #FFFFFF;
+	margin-top: 100px;
+}
+
+h1 {
+	color: #FFFFFF;
+	font-size: 75px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+p {
+	text-align: center;
+}
+
+img#error-pic {
+	height: 225px;
+	width: auto;
+	margin: auto;
+	margin-right: auto;
+	display: block;
+	-webkit-filter: invert(100%);
+}
+
+#url {
+	text-align: center;
+}
