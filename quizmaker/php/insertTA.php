@@ -21,12 +21,12 @@
 	// CONSTRUCT THE SQL QUERY TO CHECK EXISTENCE OF TA
 	$sql = 
 	"
-	SELECT * FROM users
+	SELECT user_id FROM users
 	WHERE email = $email;
 	";
-	$result = mysql_query($sql);
+	$user_id = mysql_query($sql);
 	
-	if(!$result) 
+	if(!$user_id) 
 	{
 		// CHECK FOR DUPLICATES
 		$sql = 
@@ -51,7 +51,7 @@
 
 		// CHECK IF COURSE EXISTS
 		exc($course_num);
-		
+
 		// CONSTRUCT THE SQL QUERY TO INSERT NEW TA
 		$sql = 
 		"
@@ -99,23 +99,15 @@
 		echo 
 		"
 		<script type='text/javascript'>
-			alert('User does not exist. Please try again');
+			alert('TA does not exist. Please try again');
 		</script>
 		";
+		exit(1);
 	}
-	
 
-	// REDIRECT USER TO SAME PAGE
-	
-	/* if($result){
-		header("Location: ../html/addtas.html");
-	}
-	else {
-		echo "ERROR";
-	}*/
+	// REDIRECT USER TO SAME PAGE AFTER SUBMISSION
+	header("Location: ../html/addtas.html");
 
 	// CLOSE THE SQL CONNECTION
 	mysql_close();
-
-
 ?>
