@@ -9,7 +9,7 @@
 	(
 		ta_id INT AUTO_INCREMENT,
 		user_id INT,
-		course_num INT,
+		course_num VARCHAR(50),
 		primary key (ta_id)
 	);
 	CREATE TABLE students 
@@ -32,6 +32,7 @@
 		answer CHAR(36),
 		primary key (user_id)
 	);
+	/* added AUTO_INCREMENT */
 	CREATE TABLE courses 
 	(
 		course_num VARCHAR(50),
