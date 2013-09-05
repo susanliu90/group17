@@ -13,7 +13,7 @@
 	// SELECT THE DATABASE
 	mysql_select_db($db_database)
 	    or die("Unable to select database: " . mysql_error());
-		
+
 	// GRAB THE POST INFORMATION
 	$email	     = $_POST["email"];
 	$course_num  = $_POST["course_num"];
