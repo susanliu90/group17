@@ -14,6 +14,7 @@
 <html>
 <head>
 	<meta charset='utf-8'> 
+	<!-- <meta http-equiv="refresh" content="5"> -->
 	<title>QUIZZLER</title>
 	<!-- CSS files -->
 	<link rel="stylesheet" href="../css/jquery-ui.css" />
@@ -158,8 +159,12 @@
 					</td>
 				</tr>
 			</table>
-			<input type="button" class="btn btn-primary" value="Add TA" action="insertTA.php" method="POST">
-			<input type="button" class="btn btn-primary" value="Delete TA" action="deleteTA.php" method="POST">
+			<form action="../php/insertTA.php" method="POST">
+				<input type="submit" class="btn btn-primary" value="Add TA">
+			</form>
+			<form action="../php/deleteTA.php" method="POST">
+				<input type="submit" class="btn btn-primary" value="Delete TA">
+			</form>
 		</div>
 	</div>	  
 </body>
