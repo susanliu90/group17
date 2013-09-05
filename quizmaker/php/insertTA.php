@@ -3,8 +3,8 @@
 	// SET UP THE SQL CONNECTION
 	$db_hostname = "localhost";
 	$db_database = "quizzler"; 
-	$db_username = "root";
-	$db_password = "root";
+	$db_username = "s17";
+	$db_password = "groupe17";
 
 	// CONNECT TO THE DATABASE
 	$db_server = mysql_connect($db_hostname, $db_username, $db_password)
