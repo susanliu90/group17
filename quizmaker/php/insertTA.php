@@ -98,7 +98,7 @@
 
 	}
 	// REDIRECT USER TO SAME PAGE AFTER SUBMISSION
-	header("Location: ../html/addtas.html");
+	header("Location: ../html/addtas.php");
 	
 	// CLOSE THE SQL CONNECTION
 	mysql_close();

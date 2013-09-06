@@ -1,35 +1,61 @@
 <?php
-	// set up the SQL connection
-	$db_hostname = "hostname";
+	include 'functions.php';
+	// SET UP THE SQL CONNECTION
+	$db_hostname = "localhost";
 	$db_database = "quizzler"; 
-	$db_username = "user";
-	$db_password = "";
+	$db_username = "s17";
+	$db_password = "groupe17";
 
-	// connect to the DB
+	// CONNECT TO THE DATABASE
 	$db_server = mysql_connect($db_hostname, $db_username, $db_password)
-		or die("There was an error connecting to the database:" .mysql_error());
+		or die("There was an error connecting to the database:" . mysql_error());
 
-	// select the DB
-		mysql_select_db($db_database)
+	// SELECT THE DATABASE
+	mysql_select_db($db_database)
 	    or die("Unable to select database: " . mysql_error());
 
-	$courseNum   = $_POST["course-num"];
-	$courseSched = $_POST["course-sched"];
-	$courseLoc	 = $_POST["course-loc"];
-	$coursePwd   = $_POST["course-pwd"]; 	
+	// GRAB THE POST INFORMATION
+	// $course_num  = $_POST["course-num"];
+	// $course_sched  = $_POST["course-sched"];
+	// $course_loc  = $_POST["course-loc"];
 
-	// Insert data into mysql
-	$sql="INSERT INTO courses (courseNum, courseSched, courseLoc, coursePwd)
-		VALUES ($courseNum, $courseSched, $courseLoc, $coursePwd);";
-	$result = mysql_query($sql);
+	//echo "$course_num";
+	
+	// CONSTRUCT THE SQL QUERY TO CHECK EXISTENCE OF COURSE
+	// $courses = 
+	// "
+	// SELECT course_num FROM courses
+	// WHERE course_num = '$course_num';
+	// ";
+	// $query = mysql_query($sql);
+	// $result = mysql_fetch_assoc($query);
+	// while ($course = mysql_fetch_assoc($result))
+	// {
+	// 	$course_num1 = $course['course_num'];
+	// }
 
-	if($result){
-		header("Location: ../html/coursemanager.html");
-	}
-	else {
-		echo "ERROR";
-	}
+	// if(exc($course_num))
+	// {
+	// 	//echo "got here 1";
+	// 	// CONSTRUCT THE SQL QUERY TO INSERT NEW TA
+	// 	$sql = 
+	// 	"
+	// 	INSERT INTO courses (
+	// 		course_num,
+	// 		course_sched,
+	// 		course_loc
+	// 	) 
+	// 	VALUES (
+	// 		'$course_num', 
+	// 		'$course_sched',
+	// 		'$course_loc'
+	// 	);"; 	
+	// 	$result = mysql_query($sql);	
+	// }
 
-	//close mySQL
+	// REDIRECT USER TO SAME PAGE AFTER SUBMISSION
+	header("Location: ../html/coursemanager.php");
+	
+	// CLOSE THE SQL CONNECTION
 	mysql_close();
 ?>
