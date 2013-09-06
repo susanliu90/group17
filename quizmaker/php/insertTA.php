@@ -18,6 +18,8 @@
 	$email	     = $_POST["email"];
 	$course_num  = $_POST["course_num"];
 	
+	//echo "$course_num";
+	
 	// CONSTRUCT THE SQL QUERY TO CHECK EXISTENCE OF TA
 	$sql = 
 	"
@@ -35,7 +37,6 @@
 	";
 	
 	
-	
 	$result1 = mysql_query($ID);
 	while ($data1 = mysql_fetch_assoc($result1))
 	{
@@ -48,13 +49,14 @@
 	SELECT ta_id FROM tas
 	WHERE user_id = '$user_id';
 	";
-	$result2 = mysql_query($ID);
+	$result2 = mysql_query($dup_ta);
 	while ($data2 = mysql_fetch_assoc($result2))
 	{
 		//echo $data1["user_id"];
-		$ta_id = $data1["ta_id"];
+		$ta_id = $data2["ta_id"];
 	}
 	
+	//echo "$ta_id";
 	
 	//if there is no duplicate. if the user_id is blank.
 	//we are inserting user_id but we dont prompt the user for user_id
@@ -65,8 +67,10 @@
 		//echo $course_num;
 		if ( exc($course_num) )
 		{
+			//echo "course num : $course_num  <br>";
 			if( ext($ta_id) )
 			{
+				//echo "got here 1";
 				// CONSTRUCT THE SQL QUERY TO INSERT NEW TA
 				$sql = 
 				"

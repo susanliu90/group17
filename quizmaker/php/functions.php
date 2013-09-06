@@ -9,14 +9,25 @@
 		";
 
 		$result = mysql_query($sql);
+		while ($data = mysql_fetch_assoc($result))
+		{
+			//echo $data1["user_id"];
+			$course_numResult = $data["course_num"];
+		}
+		
+		//echo "$course_numResult <br>";
 
-		if (!$result)
+		if (!$course_numResult)
 		{
 			echo 
 			"
-			<script type='text/javascript'>
-				alert('Course does not exist. Please try again.');
-			</script>
+				<script>
+			   if (window.confirm('Course does not exist. Click either button to go back.')) {
+			        window.location.href='../html/addtas.html';
+			    }
+			    else
+			    	window.location.href='../html/addtas.html';
+				</script>
 			";
 			return false;
 		}
@@ -48,8 +59,12 @@
 			";
 			return false;
 		}
-		else
+		else{
+			//echo "got here 2.";
 			return true;
+		}
+			
+			
 	}
 	
 		/*
