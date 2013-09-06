@@ -21,10 +21,66 @@
 	// CONSTRUCT THE SQL QUERY TO CHECK EXISTENCE OF TA
 	$sql = 
 	"
-	SELECT user_id FROM users
-	WHERE email = $email;
+	SELECT email FROM users
+	WHERE email = '$email';
 	";
-	$user_id = mysql_query($sql);
+	$result = mysql_query($sql);
+	
+	$data = mysql_fetch_array($result);
+	
+	//if there is no duplicate. if the user_id is blank.
+	//we are inserting user_id but we dont prompt the user for user_id
+	if("".$data['email'] == $email)
+	{
+	
+		echo "hi";
+		echo $course_num;
+		if ( exc($course_num) )
+		{
+			echo "bitches";
+			// CONSTRUCT THE SQL QUERY TO INSERT NEW TA
+			$sql = 
+			"
+			INSERT INTO tas (
+				email,
+				course_num
+			) 
+			VALUES (
+				'$email', 
+				'$course_num'
+			);
+			"; 	
+			$result = mysql_query($sql);		
+			echo "damn it!";
+		}		
+		echo $sql;
+	}
+	else //this is if there is a duplicate
+	{
+		echo 
+			"
+			<script type='text/javascript'>
+				alert('User does not exist. Please create become a User first.');
+			</script>
+			";
+
+	}
+	
+
+/*	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	if(!$user_id) 
 	{
@@ -34,7 +90,7 @@
 	    SELECT * FROM tas WHERE user_id = (
 	    SELECT user_id FROM users 
 		WHERE email = $email) AND
-		course_num = $course_num;
+		course_num = '$course_num';
 		";
 		$result = mysql_query($sql);
 
@@ -73,7 +129,7 @@
 		FROM ta 
 		WHERE 
 		user_id = $user_id AND
-		course_num = $course_num;
+		course_num = '$course_num';
 		";
 
 		$result = mysql_query($sql);
@@ -110,4 +166,7 @@
 
 	// CLOSE THE SQL CONNECTION
 	mysql_close();
+
+*/
+
 ?>

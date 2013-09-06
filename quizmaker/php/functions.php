@@ -5,7 +5,7 @@
 		$sql =
 		"
 		SELECT * FROM courses
-		WHERE course_num = $course_num;
+		WHERE course_num = '$course_num';
 		";
 
 		$result = mysql_query($sql);
@@ -18,10 +18,11 @@
 				alert('Course does not exist. Please try again.');
 			</script>
 			";
-			exit(1);
+			return false;
 		}
+		return true;
 	}
-
+	/*
 	function exp($prof_id)
 	{
 		$sql =
@@ -86,5 +87,6 @@
 			";
 			exit(1);
 		}
-	}	
+	} 
+	*/	
 ?>
