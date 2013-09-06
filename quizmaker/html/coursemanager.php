@@ -130,11 +130,11 @@
 			<h3>Course Manager</h3>
 			<table>
 				<tr>
-					<th class="span3 align-center roster-title">Course</th>
-					<th class="span3 align-center roster-title">Schedule</th>
-					<th class="span3 align-center roster-title">Location</th>
-					<th class="span3 align-center roster-title">Info</th>
-					<th class="span3 align-center roster-title">Delete</th>
+					<th class="span2 align-center roster-title">Course</th>
+					<th class="span2 align-center roster-title">Schedule</th>
+					<th class="span2 align-center roster-title">Location</th>
+					<th class="span2 align-center roster-title">Info</th>
+					<th class="span2 align-center roster-title">Delete</th>
 				</tr>
 				<tr>
 					<td><?php include '../php/displayCourses.php';?></td>

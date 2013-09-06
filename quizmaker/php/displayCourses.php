@@ -26,13 +26,26 @@
 		$course_loc = $row['course_loc'];
 
 		echo "<tr>
-			<td class=\"span3 align-center\">".$course_num."</td>
-			<td class=\"span3 align-center\">".$course_sched."</td>
-			<td class=\"span3 align-center\">".$course_loc."</td>
-			<td class=\"span3 align-center\">
-				<input type=\"button\" class=\"btn btn-primary btn-small\" value=\"Edit\">
-			</td>
-			<td class=\"span3 align-center\"><a href=\"#\"><i class=\"icon-trash\"></i></a></td>
+					<td class=\"span2 align-center\">"
+						.$course_num.
+					"</td>
+					<td class=\"span2 align-center\">"
+						.$course_sched.
+					"</td>
+					<td class=\"span2 align-center\">"
+						.$course_loc.
+					"</td>
+					<td class=\"span2 align-center\">
+						<input type=\"button\" class=\"btn btn-primary btn-small\" value=\"Edit\">
+					</td>
+					<td class=\"span2 align-center\">
+						<form action=\"../php/deleteCourse.php\" method=\"POST\">
+							<input type=\"hidden\" name=\"".$course_num."\">
+							<input type=\"hidden\" name=\"".$course_sched."\">
+							<input type=\"hidden\" name=\"".$course_num."\">
+							<input type=\"submit\" class=\"btn btn-primary btn-small\" value=\"Delete\">
+						</form>
+					</td>
 			</tr>";
 	}
 
