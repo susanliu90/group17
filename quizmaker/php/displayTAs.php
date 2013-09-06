@@ -37,7 +37,7 @@
 		$email = result['email'];
 
 		echo "<tr>
-				<td>" . $firstName $lastName . "</td>
+				<td id=>" . $firstName $lastName . "</td>
 				<td>" . $email . "</td>
 				<td>" s. $course_num . "</td>
 			</tr>";
