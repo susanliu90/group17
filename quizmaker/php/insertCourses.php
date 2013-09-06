@@ -15,9 +15,9 @@
 	    or die("Unable to select database: " . mysql_error());
 
 	// GRAB THE POST INFORMATION
-	// $course_num  = $_POST["course-num"];
-	// $course_sched  = $_POST["course-sched"];
-	// $course_loc  = $_POST["course-loc"];
+	$course_num  = $_POST["course-num"];
+	$course_sched  = $_POST["course-sched"];
+	$course_loc  = $_POST["course-loc"];
 
 	//echo "$course_num";
 	
@@ -34,24 +34,24 @@
 	// 	$course_num1 = $course['course_num'];
 	// }
 
-	// if(exc($course_num))
-	// {
-	// 	//echo "got here 1";
-	// 	// CONSTRUCT THE SQL QUERY TO INSERT NEW TA
-	// 	$sql = 
-	// 	"
-	// 	INSERT INTO courses (
-	// 		course_num,
-	// 		course_sched,
-	// 		course_loc
-	// 	) 
-	// 	VALUES (
-	// 		'$course_num', 
-	// 		'$course_sched',
-	// 		'$course_loc'
-	// 	);"; 	
-	// 	$result = mysql_query($sql);	
-	// }
+	if(exc($course_num))
+	{
+		//echo "got here 1";
+		// CONSTRUCT THE SQL QUERY TO INSERT NEW TA
+		$sql = 
+		"
+		INSERT INTO courses (
+			course_num,
+			course_sched,
+			course_loc
+		) 
+		VALUES (
+			'$course_num', 
+			'$course_sched',
+			'$course_loc'
+		);"; 	
+		$result = mysql_query($sql);	
+	}
 
 	// REDIRECT USER TO SAME PAGE AFTER SUBMISSION
 	header("Location: ../html/coursemanager.php");
