@@ -28,13 +28,14 @@
 		$sql =
 		"
 		SELECT * FROM tas
-		WHERE ta_id = '$ta_id';
+		WHERE ta_id = $ta_id;
 		";
 
 		$result = mysql_query($sql);
 
 		if ($result)
 		{
+			echo "slalalalala";
 			echo
 			"
 				<script>
@@ -45,9 +46,10 @@
 				    	window.location.href='../html/addtas.html';
 				</script>
 			";
-			return true;
+			return false;
 		}
-		return false;
+		else
+			return true;
 	}
 	
 		/*
