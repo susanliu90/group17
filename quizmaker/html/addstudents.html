@@ -179,12 +179,13 @@
 		</div>
 		<div class="hero-unit">
 			<h3>Add New Students</h3>
+			<form action="../php/insertStudents.php" method="POST">
 			<table id="students">
 				<tr>
 					<th class="span2 roster-title align-center">Last Name</th>
 					<th class="span2 roster-title align-center">First Name</th>
 					<th class="span2 roster-title align-center">Email</th>
-					<th class="span2 roster-title align-center">Course</th>
+				<!--	<th class="span2 roster-title align-center">Course</th> -->
 <!-- 					<th class="span1 roster-title align-center">Current Grade</th> -->
 					
 				</tr>
@@ -200,14 +201,12 @@
 					<td>
 						<input type="text" name="stu-email" placeholder="student email">
 					</td>
-					<td style="text-align: center">
-						<select name="course">
-							<option value="CSE 134B">CSE 134B</option>
-							<option value="CSE 135">CSE 135</option>
-							<option value="CSE 136">CSE 136</option>
-						</select>
+					<!--
+					<td>
+						<input type="text" name="stu-course" placeholder="course">
 					</td>
-<!-- 					<td>
+					-->
+					<!-- 					<td>
 						<select>
 							<option value="A+">A+</option>
 							<option value="A">A</option>
@@ -225,8 +224,13 @@
 					</td> -->
 				</tr>
 			</table>
-			<input type="button" class="btn btn-primary" value="Add another student" onclick="addStudent('students')">
-			<input type="button" class="btn btn-primary" value="Submit">
+			
+			<input type="submit" class="btn btn-primary" value="Add Student">
+			</form>
+			
+			<form action="../php/deleteTA.php" method="POST">
+				<input type="submit" class="btn btn-primary" value="Delete TA">
+			</form>
 		</div>
 	</div>	 
       </div>

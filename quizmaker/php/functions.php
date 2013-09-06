@@ -9,40 +9,29 @@
 		";
 
 		$result = mysql_query($sql);
+		while ($data = mysql_fetch_assoc($result))
+		{
+			//echo $data1["user_id"];
+			$course_numResult = $data["course_num"];
+		}
+		
+		//echo "$course_numResult <br>";
 
-		if (!$result)
+		if (!$course_numResult)
 		{
 			echo 
 			"
-			<script type='text/javascript'>
-				alert('Course does not exist. Please try again.');
-			</script>
+				<script>
+			   if (window.confirm('Course does not exist. Click either button to go back.')) {
+			        window.location.href='../html/addtas.html';
+			    }
+			    else
+			    	window.location.href='../html/addtas.html';
+				</script>
 			";
 			return false;
 		}
 		return true;
-	}
-	/*
-	function exp($prof_id)
-	{
-		$sql =
-		"
-		SELECT * FROM professors
-		WHERE prof_id = $prof_id;
-		";
-
-		$result = mysql_query($sql);
-
-		if (!$result)
-		{
-			echo 
-			"
-			<script type='text/javascript'>
-				alert('Professor does not exist. Please try again.');
-			</script>
-			";
-			exit(1);
-		}
 	}
 
 	function ext($ta_id)
@@ -55,18 +44,60 @@
 
 		$result = mysql_query($sql);
 
-		if (!$result)
+		if ($result)
 		{
-			echo 
+			echo "slalalalala";
+			echo
 			"
-			<script type='text/javascript'>
-				alert('TA does not exist. Please try again.');
-			</script>
+				<script>
+				    if (window.confirm('TA already exists. Click either button to go back.')) {
+				        window.location.href='../html/addtas.html';
+				    }
+				    else
+				    	window.location.href='../html/addtas.html';
+				</script>
 			";
-			exit(1);
+			return false;
 		}
+		else{
+			//echo "got here 2.";
+			return true;
+		}			
+	}
+	
+
+	function exp($prof_id)
+	{
+		$sql =
+		"
+		SELECT * FROM professors
+		WHERE prof_id = '$prof_id';
+		";
+
+		if ($result)
+		{
+			echo "slalalalala";
+			echo
+			"
+				<script>
+				    if (window.confirm('TA already exists. Click either button to go back.')) {
+				        window.location.href='../html/addtas.html';
+				    }
+				    else
+				    	window.location.href='../html/addtas.html';
+				</script>
+			";
+			return false;
+		}
+		else{
+			//echo "got here 2.";
+			return true;
+		}		
 	}
 
+	
+
+	/*
 	function exs($student_id)
 	{
 		$sql =

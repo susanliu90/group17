@@ -13,33 +13,31 @@
 	mysql_select_db($db_database)
 	    or die("Unable to select database: " . mysql_error());
 
-	$sql =
-	"
-	SELECT * FROM tas;
-	"
+	$ta = "SELECT * FROM users WHERE level = 'TA';";
+	$tas = mysql_query($ta);
+
+	$course_num = "SELECT * FROM users WHERE level = 'TA';";
 	$tas = mysql_query($sql);
 
-	while ($row = mysql_fetch_array($ta))
+	while ($row = mysql_fetch_array($tas, MYSQL_ASSOC))
 	{
-		$ta_id = $row['ta_id'];
-		$user_id = $row['user_id'];
-		$course_num = $row['course_num'];
-
-		$sql =
-		"
-		SELECT * FROM tas
-		WHERE user_id = $user_id LIMIT 0,1;
-		"
-		$result = mysql_query($sql);
-
-		$firstName = result['firstName'];
-		$lastName = result['lastName'];
-		$email = result['email'];
+		$firstName = $row['firstname'];
+		$lastName = $row['lastname'];
+		$email = $row['email'];
 
 		echo "<tr>
+<<<<<<< HEAD
 				<td id=>" . $firstName $lastName . "</td>
 				<td>" . $email . "</td>
 				<td>" s. $course_num . "</td>
 			</tr>";
+=======
+			<td>".$firstName." ".$lastName."</td>
+			<td>".$email."</td>
+			<td>".$course_num."</td>
+		</tr>";
+>>>>>>> aa41b7bfaaec6c1270937d569a6a67f63baa4948
 	}
+
+	mysql_close();
 ?>
