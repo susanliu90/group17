@@ -23,28 +23,28 @@
 		return true;
 	}
 	
-	function exp($prof_id)
-	{
-		$sql =
-		"
-		SELECT * FROM professors
-		WHERE prof_id = '$prof_id';
-		";
+	// function exp($prof_id)
+	// {
+	// 	$sql =
+	// 	"
+	// 	SELECT * FROM professors
+	// 	WHERE prof_id = '$prof_id';
+	// 	";
 
-		$result = mysql_query($sql);
+	// 	$result = mysql_query($sql);
 
-		if (!$result)
-		{
-			echo 
-			"
-			<script type='text/javascript'>
-				alert('Professor does not exist. Please try again.');
-			</script>
-			";
-			return false;
-		}
-		return true;
-	}
+	// 	if (!$result)
+	// 	{
+	// 		echo 
+	// 		"
+	// 		<script type='text/javascript'>
+	// 			alert('Professor does not exist. Please try again.');
+	// 		</script>
+	// 		";
+	// 		return false;
+	// 	}
+	// 	return true;
+	// }
 /*
 	function ext($ta_id)
 	{

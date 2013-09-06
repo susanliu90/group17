@@ -26,7 +26,7 @@
 	WHERE course_num = $course_num AND course_sched = $course_sched AND course_loc = $course_loc;
 	";
 	$query = mysql_query($sql);
-
+echo $sql;
 	// while ($row = mysql_fetch_array($query, MYSQL_ASSOC))
 	// {
 	// 	$c_num = $row['course_num'];
@@ -38,8 +38,8 @@
 	{
 		$sql = 
 		"
-		DELETE course_num FROM courses
-		WHERE course_num = $course_num, course_sched = $course_sched, course_loc = $course_loc;
+		DELETE FROM courses
+		WHERE course_num = $course_num AND course_sched = $course_sched AND course_loc = $course_loc;
 		";
 		$query = mysql_query($sql);
 	}
