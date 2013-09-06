@@ -62,34 +62,39 @@
 		else{
 			//echo "got here 2.";
 			return true;
-		}
-			
-			
+		}			
 	}
 	
-		/*
+
 	function exp($prof_id)
 	{
 		$sql =
 		"
 		SELECT * FROM professors
-		WHERE prof_id = $prof_id;
+		WHERE prof_id = '$prof_id';
 		";
 
-		$result = mysql_query($sql);
-
-		if (!$result)
+		if ($result)
 		{
-			echo 
+			echo "slalalalala";
+			echo
 			"
-			<script type='text/javascript'>
-				alert('Professor does not exist. Please try again.');
-			</script>
+				<script>
+				    if (window.confirm('TA already exists. Click either button to go back.')) {
+				        window.location.href='../html/addtas.html';
+				    }
+				    else
+				    	window.location.href='../html/addtas.html';
+				</script>
 			";
-			exit(1);
+			return false;
 		}
+		else{
+			//echo "got here 2.";
+			return true;
+		}		
 	}
-	*/
+
 	
 
 	/*
