@@ -22,7 +22,7 @@
 		}
 		return true;
 	}
-	/*
+	
 	function exp($prof_id)
 	{
 		$sql =
@@ -44,7 +44,7 @@
 			return false;
 		}
 		return true;
-	}*/
+	}
 /*
 	function ext($ta_id)
 	{

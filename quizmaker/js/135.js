@@ -32,11 +32,6 @@ function checkTime(i)
 	return i;
 }
 
-$("#levelselect").change(function() {
-  var action = $(this).val() == "admin" ? "../php/insertProfessor.php" : "content";
-  $("#input").attr("action", "/search/" + action);
-});
-
     
 function addCourse(tableID) {
 
