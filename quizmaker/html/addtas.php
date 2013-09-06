@@ -77,10 +77,10 @@
 				  </a>
 				  <ul class="dropdown-menu menu-pull-left">
 				    <!-- dropdown menu links -->
-				        <li><a tabindex="-1" href="../html/coursemanager.html">Manage Courses</a></li>
-					    <li><a tabindex="-1" href="../html/addstudents.html">Manage Students</a></li>
-					    <li><a tabindex="-1" href="../html/addtas.html">Manage Teaching Assistants</a></li>
-					    <li><a tabindex="-1" href="../html/grademanager.html">Manage Grading Schemes</a></li>
+				        <li><a tabindex="-1" href="../html/coursemanager.php">Manage Courses</a></li>
+					    <li><a tabindex="-1" href="../html/addstudents.php">Manage Students</a></li>
+					    <li><a tabindex="-1" href="../html/addtas.php">Manage Teaching Assistants</a></li>
+					    <li><a tabindex="-1" href="../html/grademanager.php">Manage Grading Schemes</a></li>
 					    <li class="divider"></li>
 					    <li><a tabindex="-1" href="../homepage.html">Logout</a></li>
 				  </ul>
@@ -106,11 +106,11 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
             	<li class="nav-header">Admin Toolbar</li>
-            	<li><a href="coursemanager.html">Manage Courses</a></li>
-				<li><a href="addstudents.html">Manage Students</a></li>
-				<li class="active"><a href="addtas.html">Manage Teaching Assistants</a></li>
-				<li><a href="grademanager.html">Manage Grading Scheme</a></li>
-				<li><a href="builder.html">Make Quiz</a></li>
+            	<li><a href="coursemanager.php">Manage Courses</a></li>
+				<li><a href="addstudents.php">Manage Students</a></li>
+				<li class="active"><a href="addtas.php">Manage Teaching Assistants</a></li>
+				<li><a href="grademanager.php">Manage Grading Scheme</a></li>
+				<li><a href="builder.php">Make Quiz</a></li>
     	      <li class="nav-header">Today's Date</li>
     	      <li>
     	      	<script>
@@ -143,7 +143,7 @@
 			</table>
 		</div>
 		<div class="hero-unit">
-			<h3>Add New TA</h3>
+			<h3>Add TA</h3>
 			<form action="../php/insertTA.php" method="POST">
 			<table id="TA">
 				<tr>
@@ -160,10 +160,27 @@
 				</tr>
 			</table>
 			
-				<input type="submit" class="btn btn-primary" value="Add TA">
+				<input type="submit" class="btn btn-primary" value="Submit">
 			</form>
+			<hr>
+			<h3>Delete TA</h3>
 			<form action="../php/deleteTA.php" method="POST">
-				<input type="submit" class="btn btn-primary" value="Delete TA">
+			<table id="TA">
+				<tr>
+					<th class="span3 align-center roster-title" name="email">Email</th>
+					<th class="span3 align-center roster-title" name="course_num">Course</th>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" name="email" placeholder="email">
+					</td>
+					<td>
+						<input type="text" name="course_num" placeholder="course">
+					</td>
+				</tr>
+			</table>
+			
+				<input type="submit" class="btn btn-primary" value="Submit">
 			</form>
 		</div>
 	</div>	  

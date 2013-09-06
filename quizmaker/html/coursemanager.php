@@ -76,10 +76,10 @@
 				  </a>
 				  <ul class="dropdown-menu menu-pull-left">
 				    <!-- dropdown menu links -->
-				        <li><a tabindex="-1" href="../html/coursemanager.html">Manage Courses</a></li>
-					    <li><a tabindex="-1" href="../html/addstudents.html">Manage Students</a></li>
-					    <li><a tabindex="-1" href="../html/addtas.html">Manage Teaching Assistants</a></li>
-					    <li><a tabindex="-1" href="../html/grademanager.html">Manage Grading Schemes</a></li>
+				        <li><a tabindex="-1" href="../html/coursemanager.php">Manage Courses</a></li>
+					    <li><a tabindex="-1" href="../html/addstudents.php">Manage Students</a></li>
+					    <li><a tabindex="-1" href="../html/addtas.php">Manage Teaching Assistants</a></li>
+					    <li><a tabindex="-1" href="../html/grademanager.php">Manage Grading Schemes</a></li>
 					    <li class="divider"></li>
 					    <li><a tabindex="-1" href="../homepage.html">Logout</a></li>
 				  </ul>
@@ -105,11 +105,11 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
             	<li class="nav-header">Admin Toolbar</li>
-            	<li class="active"><a href="coursemanager.html">Manage Courses</a></li>
-				<li><a href="addstudents.html">Manage Students</a></li>
-				<li><a href="addtas.html">Manage Teaching Assistants</a></li>
-				<li><a href="grademanager.html">Manage Grading Scheme</a></li>
-				<li><a href="builder.html">Make Quiz</a></li>
+            	<li class="active"><a href="coursemanager.php">Manage Courses</a></li>
+				<li><a href="addstudents.php">Manage Students</a></li>
+				<li><a href="addtas.php">Manage Teaching Assistants</a></li>
+				<li><a href="grademanager.php">Manage Grading Scheme</a></li>
+				<li><a href="builder.php">Make Quiz</a></li>
     	      <li class="nav-header">Today's Date</li>
     	      <li>
     	      	<script>
@@ -126,73 +126,67 @@
 
 	<!-- Class Roster -->
 	<div class="span9">
-<div class="hero-unit">
+		<div class="hero-unit">
 			<h3>Course Manager</h3>
 			<table>
 				<tr>
 					<th class="span3 align-center roster-title">Course</th>
 					<th class="span3 align-center roster-title">Schedule</th>
 					<th class="span3 align-center roster-title">Location</th>
-					<th class="span3 align-center roster-title">Password</th>
+					<th class="span3 align-center roster-title">Info</th>
 					<th class="span3 align-center roster-title">Delete</th>
 				</tr>
 				<tr>
-					<td class="align-center">CSE 134B</td>
-					<td class="align-center">MTWTh 8-9:20 AM</td>
-					<td class="align-center">PCYNH 122</td>
-					<td class="span3 align-center">
-						<input type="button" class="btn btn-primary btn-small" value="Reset">
-					</td>
-					<td class="align-center"><a href="#"><i class="icon-trash"></i></a></td>
-				</tr>
-				<tr>
-					<td class="align-center">CSE 135</td>
-					<td class="align-center">MTWTh 8-9:20 AM</td>
-					<td class="align-center">PCYNH 122</td>
-					<td class="span3 align-center">
-						<input type="button" class="btn btn-primary btn-small" value="Reset">
-					</td>
-					<td class="align-center"><a href="#"><i class="icon-trash"></i></a></td>
-				</tr>
-				<tr>
-					<td class="align-center">CSE 136</td>
-					<td class="align-center">TTh 6-9:20 PM</td>
-					<td class="align-center">CNTR HALL</td>
-					<td class="span3 align-center">
-						<input type="button" class="btn btn-primary btn-small" value="Reset">
-					</td>
-					<td class="align-center"><a href="#"><i class="icon-trash"></i></a></td>
+					<td><?php include '../php/displayCourses.php';?></td>
 				</tr>
 			</table>
 		</div>
 		<div class="hero-unit">
-			<h3>Add a new course</h3>
+			<h3>Add Course</h3>
 			<form action="../php/insertCourses.php" method="post">
-			<table id="courses">
-				<tr>
-					<th class="span3 align-center roster-title">Course</th>
-					<th class="span3 align-center roster-title">Schedule</th>
-					<th class="span3 align-center roster-title">Location</th>
-					<th class="span3 align-center roster-title">Password</th>
-				</tr>
-				<tr>
-						<td>
-							<input type="text" name="course-num" placeholder="course number">
-						</td>
-						<td>
-							<input type="text" name="course-sched" placeholder="schedule">
-						</td>
-						<td>
-							<input type="text" name="course-loc" placeholder="location">
-						</td>
-						<td>
-							<input type="text" name="course-pwd" placeholder="password">
-						</td>
-				</tr>
-			</table>
-			<input type="button" class="btn btn-primary" value="Add another course" onclick="addCourse('courses')">
-			<input type="submit" class="btn btn-primary" value="Submit">
-		</form>
+				<table id="courses">
+					<tr>
+						<th class="span3 align-center roster-title">Course</th>
+						<th class="span3 align-center roster-title">Schedule</th>
+						<th class="span3 align-center roster-title">Location</th>
+					</tr>
+					<tr>
+							<td>
+								<input type="text" name="course-num" placeholder="course number">
+							</td>
+							<td>
+								<input type="text" name="course-sched" placeholder="schedule">
+							</td>
+							<td>
+								<input type="text" name="course-loc" placeholder="location">
+							</td>
+					</tr>
+				</table>
+				<input type="submit" class="btn btn-primary" value="Submit">
+			</form>
+			<hr>
+			<h3>Delete Course</h3>
+			<form action="../php/insertCourses.php" method="post">
+				<table id="courses">
+					<tr>
+						<th class="span3 align-center roster-title">Course</th>
+						<th class="span3 align-center roster-title">Schedule</th>
+						<th class="span3 align-center roster-title">Location</th>
+					</tr>
+					<tr>
+							<td>
+								<input type="text" name="course-num" placeholder="course number">
+							</td>
+							<td>
+								<input type="text" name="course-sched" placeholder="schedule">
+							</td>
+							<td>
+								<input type="text" name="course-loc" placeholder="location">
+							</td>
+					</tr>
+				</table>
+				<input type="submit" class="btn btn-primary" value="Submit">
+			</form>
 		</div>
 	</div>	  
       </div>
