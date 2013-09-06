@@ -56,7 +56,7 @@
 			<h4 style="font-size:10px;color: white;margin: 10px;text-align: center;">Quiz Navigator</h4>
 		</div>
 		<p style="color:white;"><input class= "ListingOption" onclick="hideMe2(this);" type="checkbox"> List Question </p>
-		<ul id="page1" class="rightscroll ui-sortable" style="list-style:none"> Page 1 <li class='rightqlist' draggable='true' id="smytab-1">Section 1</li> </ul>
+		<ul id="page1" class="rightscroll ui-sortable" style="list-style:none"> Page 1 <li class="rightqlist" draggable="true" id="smytab-1">Section 1</li> </ul>
 		<ul id="page2" class="rightscroll ui-sortable" style="list-style:none"> Page 2 </ul>
 		<ul id="page3" class="rightscroll ui-sortable" style="list-style:none"> Page 3 </ul>
 		<ul id="page4" class="rightscroll ui-sortable" style="list-style:none"> Page 4 </ul>
@@ -131,18 +131,14 @@
 			<h3>TA Roster</h3>
 			<table>
 				<tr>
-					<th class="span3 align-center roster-title">Name</td>
-					<th class="span3 align-center roster-title">Email</td>
-					<th class="span3 align-center roster-title">Course</td>
-					<th class="span3 roster-title align-center">Info</td>
-					<th class="span3 align-center roster-title">Delete</td>
+					<th class="span3 align-center roster-title">Name</th>
+					<th class="span3 align-center roster-title">Email</th>
+					<th class="span3 align-center roster-title">Course</th>
+					<th class="span3 roster-title align-center">Info</th>
+					<th class="span3 align-center roster-title">Delete</th>
 				</tr>
 				<tr>
-					<td id="tas">
-					 <?php include '../php/displayTAs.php';
-
-					 ?>
-					</td>
+					 <td><?php include '../php/displayTAs.php';?></td>
 				</tr>
 			</table>
 		</div>
@@ -151,8 +147,8 @@
 			<form action="../php/insertTA.php" method="POST">
 			<table id="TA">
 				<tr>
-					<th class="span3 align-center roster-title" name="email">Email</td>
-					<th class="span3 align-center roster-title" name="course_num">Course</td>
+					<th class="span3 align-center roster-title" name="email">Email</th>
+					<th class="span3 align-center roster-title" name="course_num">Course</th>
 				</tr>
 				<tr>
 					<td>
