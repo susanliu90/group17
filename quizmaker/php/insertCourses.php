@@ -15,90 +15,46 @@
 	    or die("Unable to select database: " . mysql_error());
 
 	// GRAB THE POST INFORMATION
-	$email	     = $_POST["email"];
-	$course_num  = $_POST["course_num"];
-	
+	// $course_num  = $_POST["course-num"];
+	// $course_sched  = $_POST["course-sched"];
+	// $course_loc  = $_POST["course-loc"];
+
 	//echo "$course_num";
 	
-	// CONSTRUCT THE SQL QUERY TO CHECK EXISTENCE OF TA
-	$sql = 
-	"
-	SELECT email FROM users
-	WHERE email = '$email';
-	";
-	$result = mysql_query($sql);
-	$data = mysql_fetch_array($result);
-	
-	
-	$ID = 
-	"
-	SELECT user_id FROM users
-	WHERE email = '$email';
-	";
-	
-	
-	$result1 = mysql_query($ID);
-	while ($data1 = mysql_fetch_assoc($result1))
-	{
-		//echo $data1["user_id"];
-		$user_id = $data1["user_id"];
-	}
+	// CONSTRUCT THE SQL QUERY TO CHECK EXISTENCE OF COURSE
+	// $courses = 
+	// "
+	// SELECT course_num FROM courses
+	// WHERE course_num = '$course_num';
+	// ";
+	// $query = mysql_query($sql);
+	// $result = mysql_fetch_assoc($query);
+	// while ($course = mysql_fetch_assoc($result))
+	// {
+	// 	$course_num1 = $course['course_num'];
+	// }
 
-	$dup_ta =
-	"
-	SELECT ta_id FROM tas
-	WHERE user_id = '$user_id';
-	";
-	$result2 = mysql_query($dup_ta);
-	while ($data2 = mysql_fetch_assoc($result2))
-	{
-		//echo $data1["user_id"];
-		$ta_id = $data2["ta_id"];
-	}
-	
-	//echo "$ta_id";
-	
-	//if there is no duplicate. if the user_id is blank.
-	//we are inserting user_id but we dont prompt the user for user_id
-	if("".$data['email'] == $email)
-	{
-	
-		//echo "hi<br>";
-		//echo $course_num;
-		if ( exc($course_num) )
-		{
-			//echo "course num : $course_num  <br>";
-			if( ext($ta_id) )
-			{
-				//echo "got here 1";
-				// CONSTRUCT THE SQL QUERY TO INSERT NEW TA
-				$sql = 
-				"
-				INSERT INTO tas (
-					user_id,
-					course_num
-				) 
-				VALUES (
-					'$user_id', 
-					'$course_num'
-				);
-				"; 	
-				$result = mysql_query($sql);	
-			}	
-		}		
-	}
-	else //this is if there is a duplicate
-	{
-		echo 
-			"
-			<script type='text/javascript'>
-				alert('User does not exist. Please create become a User first.');
-			</script>
-			";
+	// if(exc($course_num))
+	// {
+	// 	//echo "got here 1";
+	// 	// CONSTRUCT THE SQL QUERY TO INSERT NEW TA
+	// 	$sql = 
+	// 	"
+	// 	INSERT INTO courses (
+	// 		course_num,
+	// 		course_sched,
+	// 		course_loc
+	// 	) 
+	// 	VALUES (
+	// 		'$course_num', 
+	// 		'$course_sched',
+	// 		'$course_loc'
+	// 	);"; 	
+	// 	$result = mysql_query($sql);	
+	// }
 
-	}
 	// REDIRECT USER TO SAME PAGE AFTER SUBMISSION
-	header("Location: ../html/addtas.php");
+	header("Location: ../html/coursemanager.php");
 	
 	// CLOSE THE SQL CONNECTION
 	mysql_close();
