@@ -29,37 +29,40 @@
 	if(!$user_id) 
 	{
 		// CHECK IF COURSE EXISTS
-		exc($course_num);
+		$result = exc($course_num);
 
-		// CONSTRUCT THE SQL QUERY TO GRAB ID OF TA
-		$sql = 
-		"
-		SELECT ta_id FROM tas
-		WHERE 
-			user_id = $user_id AND
-			course_num = $course_num;
-		";
-		$ta_id = mysql_query($sql);
-
-		// CONSTRUCT THE SQL QUERY TO DELETE TA
-		$sql = 
-		"
-		DELETE FROM tas 
-		WHERE	
-			email = $email AND
-			course_num = $course_num;
-		";		 
-		$result = mysql_query($sql);
-
-		// CONSTRUCT THE SQL QUERY TO DELETE TA FROM TA LIST
-		$sql = 
-		"
-		DELETE FROM ta_list 
-		WHERE	
-			ta_id = $ta_id AND
-			course_num = $course_num;
-		";		 
-		$result = mysql_query($sql);
+		if($result)
+		{
+			// CONSTRUCT THE SQL QUERY TO GRAB ID OF TA
+			$sql = 
+			"
+			SELECT ta_id FROM tas
+			WHERE 
+				user_id = $user_id AND
+				course_num = $course_num;
+			";
+			$ta_id = mysql_query($sql);
+	
+			// CONSTRUCT THE SQL QUERY TO DELETE TA
+			$sql = 
+			"
+			DELETE FROM tas 
+			WHERE	
+				email = $email AND
+				course_num = $course_num;
+			";		 
+			$result = mysql_query($sql);
+	
+			// CONSTRUCT THE SQL QUERY TO DELETE TA FROM TA LIST
+			$sql = 
+			"
+			DELETE FROM ta_list 
+			WHERE	
+				ta_id = $ta_id AND
+				course_num = $course_num;
+			";		 
+			$result = mysql_query($sql);
+		}
 	}
 	// TA DOES NOT EXIST
 	else 
@@ -68,7 +71,7 @@
 		"
 		<script type='text/javascript'>
 			alert('TA does not exist. Please try again');
-		</script>
+		</script>ss
 		";
 		exit(1);
 	}
