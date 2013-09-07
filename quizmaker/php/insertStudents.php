@@ -15,13 +15,11 @@
 	    or die("Unable to select database: " . mysql_error());
 
 	// GRAB THE POST INFORMATION
-	$lastName	     = $_POST["stu-lname"];
-	$firstName  = $_POST["stu-fname"];
-	$email 			 =$_POST["stu-email"];
-	$course 			 =$_POST["stu-course"];
-	
-	//echo "$course_num";
-	
+	$lastname	= $_POST["lastname"];
+	$firstname  = $_POST["firstname"];
+	$email      = $_POST["email"];
+	$course_num = $_POST["course_num"];
+
 	// CONSTRUCT THE SQL QUERY TO CHECK EXISTENCE OF TA
 	$sql = 
 	"
@@ -58,29 +56,19 @@
 		$ta_id = $data2["ta_id"];
 	}
 	
-	$prof =
-	"
-		SELECT prof_id FROM professors
-		WHERE user_id = '$user_id';
-	";
-	result3 = mysql_query($prof);
-	while ($data3 = mysql_fetch_assoc($result3))
-	{
-		$prof_id = $data3["prof_id"];
-	}
-	
-	echo "$prof_id";
+	//echo "$ta_id";
 	
 	//if there is no duplicate. if the user_id is blank.
 	//we are inserting user_id but we dont prompt the user for user_id
 	if("".$data['email'] == $email)
-	{	
+	{
+	
 		//echo "hi<br>";
 		//echo $course_num;
 		if ( exc($course_num) )
 		{
 			//echo "course num : $course_num  <br>";
-			if( exp($prof_id) )
+			if( ext($ta_id) )
 			{
 				//echo "got here 1";
 				// CONSTRUCT THE SQL QUERY TO INSERT NEW TA
@@ -110,7 +98,7 @@
 
 	}
 	// REDIRECT USER TO SAME PAGE AFTER SUBMISSION
-	header("Location: ../html/addtas.html");
+	header("Location: ../html/addtas.php");
 	
 	// CLOSE THE SQL CONNECTION
 	mysql_close();
