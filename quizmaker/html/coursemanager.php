@@ -164,29 +164,6 @@
 				</table>
 				<input type="submit" class="btn btn-primary" value="Submit">
 			</form>
-			<hr>
-			<h3>Delete Course</h3>
-			<form action="../php/insertCourses.php" method="post">
-				<table id="courses">
-					<tr>
-						<th class="span3 align-center roster-title">Course</th>
-						<th class="span3 align-center roster-title">Schedule</th>
-						<th class="span3 align-center roster-title">Location</th>
-					</tr>
-					<tr>
-							<td>
-								<input type="text" name="course-num" placeholder="course number">
-							</td>
-							<td>
-								<input type="text" name="course-sched" placeholder="schedule">
-							</td>
-							<td>
-								<input type="text" name="course-loc" placeholder="location">
-							</td>
-					</tr>
-				</table>
-				<input type="submit" class="btn btn-primary" value="Submit">
-			</form>
 		</div>
 	</div>	  
       </div>

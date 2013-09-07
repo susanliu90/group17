@@ -75,10 +75,10 @@
 				  </a>
 				  <ul class="dropdown-menu menu-pull-left">
 				    <!-- dropdown menu links -->
-				        <li><a tabindex="-1" href="../html/coursemanager.html">Manage Courses</a></li>
-					    <li><a tabindex="-1" href="../html/addstudents.html">Manage Students</a></li>
-					    <li><a tabindex="-1" href="../html/addtas.html">Manage Teaching Assistants</a></li>
-					    <li><a tabindex="-1" href="../html/grademanager.html">Manage Grading Schemes</a></li>
+				        <li><a tabindex="-1" href="../html/coursemanager.php">Manage Courses</a></li>
+					    <li><a tabindex="-1" href="../html/addstudents.php">Manage Students</a></li>
+					    <li><a tabindex="-1" href="../html/addtas.php">Manage Teaching Assistants</a></li>
+					    <li><a tabindex="-1" href="../html/grademanager.php">Manage Grading Schemes</a></li>
 					    <li class="divider"></li>
 					    <li><a tabindex="-1" href="../homepage.html">Logout</a></li>
 				  </ul>
@@ -103,11 +103,11 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
             	<li class="nav-header">Admin Toolbar</li>
-            	<li><a href="coursemanager.html">Manage Courses</a></li>
+            	<li><a href="coursemanager.php">Manage Courses</a></li>
 				<li class="active"><a href="addstudents.html">Manage Students</a></li>
-				<li><a href="addtas.html">Manage Teaching Assistants</a></li>
-				<li><a href="grademanager.html">Manage Grading Scheme</a></li>
-				<li><a href="builder.html">Make Quiz</a></li>
+				<li><a href="addtas.php">Manage Teaching Assistants</a></li>
+				<li><a href="grademanager.php">Manage Grading Scheme</a></li>
+				<li><a href="builder.php">Make Quiz</a></li>
     	      <li class="nav-header">Today's Date</li>
     	      <li>
     	      	<script>

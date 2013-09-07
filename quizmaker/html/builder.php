@@ -77,10 +77,10 @@
 				  </a>
 				  <ul class="dropdown-menu">
 				    <!-- dropdown menu links -->
-				        <li><a tabindex="-1" href="coursemanager.html">Manage Courses</a></li>
-					    <li><a tabindex="-1" href="addstudents.html">Manage Students</a></li>
-					    <li><a tabindex="-1" href="addtas.html">Manage Teaching Assistants</a></li>
-					    <li><a tabindex="-1" href="grademanager.html">Manage Grading Schemes</a></li>
+				        <li><a tabindex="-1" href="coursemanager.php">Manage Courses</a></li>
+					    <li><a tabindex="-1" href="addstudents.php">Manage Students</a></li>
+					    <li><a tabindex="-1" href="addtas.php">Manage Teaching Assistants</a></li>
+					    <li><a tabindex="-1" href="grademanager.php">Manage Grading Schemes</a></li>
 					    <li class="divider"></li>
 					    <li><a tabindex="-1" href="../homepage.html">Logout</a></li>
 				  </ul>
