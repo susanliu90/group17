@@ -1,3 +1,25 @@
+function muModal(f)
+{
+  var form=f,
+      modal=$('<div/>', {
+    'id':'alert',
+    'html':'<iframe src="../html/edit.html" style="width:400px;"></iframe>'
+  })
+  .dialog({
+    'title':'Edit',
+    'modal':true,
+    'width':450,
+    'height':'auto',
+    'buttons': {
+      'OK': function() { 
+        $(this).dialog( "close" ); 
+        // do something, maybe call form.submit();
+      }
+     }
+  });
+  return false;
+}
+
 function email_sent() {
 	document.getElementById('login').style.display = 'none';
 	document.getElementById('login-blank').style.display = 'block';

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--
  *  ***************************************
  *	CSE134B Web-Client Languages
@@ -37,7 +37,6 @@
 	<script src="../shadowbox-3.0.3/shadowbox.js"></script>
 	<script src="../js/135.js"></script>
 	<script src="../js/dropdown.js"></script>
-
 	<script type="text/javascript">
 	
 		Shadowbox.init({
@@ -55,7 +54,7 @@
 			<h4 style="font-size:10px;color: white;margin: 10px;text-align: center;">Quiz Navigator</h4>
 		</div>
 		<p style="color:white;"><input class= "ListingOption" onclick="hideMe2(this);" type="checkbox"> List Question </p>
-		<ul id="page1" class="rightscroll ui-sortable" style="list-style:none"><li> Page 1 </li><li class='rightqlist' draggable='true' id="smytab-1">Section 1</li> </ul>
+		<ul id="page1" class="rightscroll ui-sortable" style="list-style:none"><li> Page 1 </li> <li class='rightqlist' draggable='true' id="smytab-1">Section 1</li> </ul>
 		<ul id="page2" class="rightscroll ui-sortable" style="list-style:none"><li> Page 2 </li></ul>
 		<ul id="page3" class="rightscroll ui-sortable" style="list-style:none"><li> Page 3 </li></ul>
 		<ul id="page4" class="rightscroll ui-sortable" style="list-style:none"><li> Page 4 </li></ul>
@@ -66,7 +65,7 @@
 	<div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">     
-          <a class="brand" href="../homepage.html" tabindex=3><img src="../img/logo1.png"></a>
+          <a class="brand" href="../homepage.html" tabindex=3><img src="../img/logo1.png" alt=""></a>
           <div class="nav-collapse collapse pull-right"> <!-- start copying -->
             <p class="navbar-text">
             	<div class="btn-group btn-pad-right">
@@ -84,7 +83,6 @@
 					    <li><a tabindex="-1" href="../homepage.html">Logout</a></li>
 				  </ul>
 				</div> <!-- stop copying -->
-            </div>
 			<!-- Gallery of images for the help feature -->
 				<a href="../img/helpMechanism/tutorial0.png" rel="shadowbox[helpMechanism]"></a>
 				<a href="../img/helpMechanism/tutorial1.png" rel="shadowbox[helpMechanism]"></a>
@@ -105,8 +103,8 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
             	<li class="nav-header">Admin Toolbar</li>
-            	<li class="active"><a href="coursemanager.php">Manage Courses</a></li>
-				<li><a href="addstudents.php">Manage Students</a></li>
+            	<li><a href="coursemanager.php">Manage Courses</a></li>
+				<li class="active"><a href="addstudents.html">Manage Students</a></li>
 				<li><a href="addtas.php">Manage Teaching Assistants</a></li>
 				<li><a href="grademanager.php">Manage Grading Scheme</a></li>
 				<li><a href="builder.php">Make Quiz</a></li>
@@ -124,49 +122,118 @@
           </div>
         </div>
 
-	<!-- Class Roster -->
+	<!-- Quiz container that store all 6 types of quiz questions -->
 	<div class="span9">
 		<div class="hero-unit">
-			<h3>Course Manager</h3>
+			<h3>Student Roster</h3>
 			<table>
 				<tr>
-					<th class="span2 align-center roster-title">Course</th>
-					<th class="span2 align-center roster-title">Schedule</th>
-					<th class="span2 align-center roster-title">Location</th>
-					<th class="span2 align-center roster-title">Info</th>
-					<th class="span2 align-center roster-title">Delete</th>
+					<th class="span3 roster-title align-center">Name</th>
+					<th class="span3 roster-title align-center">Email</th>
+					<th class="span3 roster-title align-center">Course</th>
+					<!-- <th class="span3 roster-title align-center">Current Grade</th> -->
+					<th class="span3 roster-title align-center">Information</th>
+					<th class="span3 roster-title align-center">Delete</th>
 				</tr>
 				<tr>
-					<td><?php include '../php/displayCourses.php';?></td>
+					<td class="span3 align-center">Wilson Guo</td>
+					<td class="span3 align-center">hello@ucsd.edu</td>
+					<td class="span3 align-center">CSE 135</td>
+					<!-- <td class="span3 align-center">F-</td> -->
+					<td class="span3 align-center">
+						<input type="button" class="btn btn-primary btn-small" value="Edit">
+					</td>
+					<td class="span3 align-center"><a href="#"><i class="icon-trash"></i></a></td>
+				</tr>
+				<tr>
+					<td class="span3 align-center">John Chang</td>
+					<td class="span3 align-center">hi@ucsd.edu</td>
+					<td class="span3 align-center">CSE 135</td>
+					<!-- <td class="span3 align-center">B</td> -->
+					<td class="span3 align-center">
+						<input type="button" class="btn btn-primary btn-small" value="Edit">
+					</td>
+					<td class="span3 align-center"><a href="#"><i class="icon-trash"></i></a></td>
+				</tr>
+				<tr>
+					<td class="span3 align-center">Louis Wong</td>
+					<td class="span3 align-center">bonjour@ucsd.edu</td>
+					<td class="span3 align-center">CSE 135</td>
+					<!-- <td class="span3 align-center">B+</td> -->
+					<td class="span3 align-center">
+						<input type="button" class="btn btn-primary btn-small" value="Edit">
+					</td>
+					<td class="span3 align-center"><a href="#"><i class="icon-trash"></i></a></td>
+				</tr>
+				<tr>
+					<td class="span3 align-center">Susan Liu</td>
+					<td class="span3 align-center">ciao@ucsd.edu</td>
+					<td class="span3 align-center">CSE 135</td>
+					<!-- <td class="span3 align-center">A+</td> -->
+					<td class="span3 align-center">
+						<input type="button" class="btn btn-primary btn-small" value="Edit">
+					</td>
+					<td class="span3 align-center"><a href="#"><i class="icon-trash"></i></a></td>
 				</tr>
 			</table>
 		</div>
 		<div class="hero-unit">
-			<h3>Add Course</h3>
-			<form action="../php/insertCourses.php" method="post">
-				<table id="courses">
-					<tr>
-						<th class="span3 align-center roster-title">Course</th>
-						<th class="span3 align-center roster-title">Schedule</th>
-						<th class="span3 align-center roster-title">Location</th>
-					</tr>
-					<tr>
-							<td>
-								<input type="text" name="course-num" placeholder="course number">
-							</td>
-							<td>
-								<input type="text" name="course-sched" placeholder="schedule">
-							</td>
-							<td>
-								<input type="text" name="course-loc" placeholder="location">
-							</td>
-					</tr>
-				</table>
-				<input type="submit" class="btn btn-primary" value="Submit">
+			<h3>Add New Students</h3>
+			<form action="../php/insertStudents.php" method="POST">
+			<table id="students">
+				<tr>
+					<th class="span2 roster-title align-center">Last Name</th>
+					<th class="span2 roster-title align-center">First Name</th>
+					<th class="span2 roster-title align-center">Email</th>
+				<!--	<th class="span2 roster-title align-center">Course</th> -->
+<!-- 					<th class="span1 roster-title align-center">Current Grade</th> -->
+					
+				</tr>
+				<tr>
+					<td>
+
+						<input type="text" name="stu-lname" placeholder="Last name">
+					</td>
+					<td>
+						<input type="text" name="stu-fname" placeholder="First name">
+
+					</td>
+					<td>
+						<input type="text" name="stu-email" placeholder="student email">
+					</td>
+					<!--
+					<td>
+						<input type="text" name="stu-course" placeholder="course">
+					</td>
+					-->
+					<!-- 					<td>
+						<select>
+							<option value="A+">A+</option>
+							<option value="A">A</option>
+							<option value="A-">A-</option>
+							<option value="B+">B+</option>
+							<option value="B">B</option>
+							<option value="B-">B-</option>
+							<option value="C+">C+</option>
+							<option value="C">C</option>
+							<option value="C-">C-</option>
+							<option value="D">D</option>
+							<option value="F">F</option>
+							<option value="N/A">N/A</option>
+						</select>
+					</td> -->
+				</tr>
+			</table>
+			
+			<input type="submit" class="btn btn-primary" value="Add Student">
+			</form>
+			
+			<form action="../php/deleteTA.php" method="POST">
+				<input type="submit" class="btn btn-primary" value="Delete TA">
 			</form>
 		</div>
-	</div>	  
+	</div>	 
       </div>
-    </div>
+    </div> 			
 </body>
 </html>

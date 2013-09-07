@@ -39,10 +39,10 @@
 
 	if ($num_rows)
 	{
-		// echo "string";
+		echo "string";
 		$sql = 
 		"
-		DELETE FROM courses
+		UPDATE FROM courses
 		WHERE course_num = '$course_num' AND course_sched = '$course_sched' AND course_loc = '$course_loc';
 		";
 		$query = mysql_query($sql);
