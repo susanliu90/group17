@@ -178,7 +178,7 @@
 			</table>
 		</div>
 		<div class="hero-unit">
-			<h3>Add New Students</h3>
+			<h3>Add Student</h3>
 			<form action="../php/insertStudents.php" method="POST">
 			<table id="students">
 				<tr>
@@ -227,10 +227,10 @@
 			
 			<input type="submit" class="btn btn-primary" value="Add Student">
 			</form>
-			
+<!-- 			
 			<form action="../php/deleteTA.php" method="POST">
 				<input type="submit" class="btn btn-primary" value="Delete TA">
-			</form>
+			</form> -->
 		</div>
 	</div>	 
       </div>

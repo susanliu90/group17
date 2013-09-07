@@ -162,26 +162,6 @@
 			
 				<input type="submit" class="btn btn-primary" value="Submit">
 			</form>
-			<hr>
-			<h3>Delete TA</h3>
-			<form action="../php/deleteTA.php" method="POST">
-			<table id="TA">
-				<tr>
-					<th class="span3 align-center roster-title" name="email">Email</th>
-					<th class="span3 align-center roster-title" name="course_num">Course</th>
-				</tr>
-				<tr>
-					<td>
-						<input type="text" name="email" placeholder="email">
-					</td>
-					<td>
-						<input type="text" name="course_num" placeholder="course">
-					</td>
-				</tr>
-			</table>
-			
-				<input type="submit" class="btn btn-primary" value="Submit">
-			</form>
 		</div>
 	</div>	  
 </body>
