@@ -26,18 +26,21 @@
 		$course_loc = $row['course_loc'];
 
 		echo "<tr>
-					<td class=\"span2 align-center\">"
+					<td id=\"course_num\" class=\"span2 align-center\"><span contenteditable=\"false\">"
 						.$course_num.
-					"</td>
-					<td class=\"span2 align-center\">"
+					"</span></td>
+					<td class=\"span2 align-center\"><span id=\"course_sched".$course_num."\" contenteditable=\"true\">"
 						.$course_sched.
-					"</td>
-					<td class=\"span2 align-center\">"
+					"</span></td>
+					<td class=\"span2 align-center\"><span id=\"course_loc".$course_num."\" contenteditable=\"true\">"
 						.$course_loc.
-					"</td>
+					"</span></td>
 					<td class=\"span2 align-center\">
-						<form method=\"post\" action=\"../php/edit.php\" onsubmit=\"return muModal(this)\">
-						  <input type=\"submit\" class=\"btn btn-primary btn-small\" value=\"Edit\">
+						<form method=\"post\" action=\"../php/updateCourses.php\">
+						  <input type=\"hidden\" name=\"course_num\" value=\"".$course_num."\">
+							<input type=\"hidden\" name=\"course_sched\" value=\"<script>document.getElementById(course_sched".$course_num.").innerHTML;</script>\">
+							<input type=\"hidden\" name=\"course_loc\" value=\"<script>document.getElementById(course_loc".$course_num.").innerHTML;</script>\">
+						  <input type=\"submit\" class=\"btn btn-primary btn-small\" value=\"Update\">
 						</form>
 					</td>
 					<td class=\"span2 align-center\">

@@ -23,7 +23,7 @@
 	$sql = 
 	"
 	SELECT course_num FROM courses
-	WHERE course_num = '$course_num' AND course_sched = '$course_sched' AND course_loc = '$course_loc';
+	WHERE course_num = '$course_num';
 	";
 	$query = mysql_query($sql);
 	$num_rows = mysql_num_rows($query);
@@ -39,12 +39,12 @@
 
 	if ($num_rows)
 	{
-		echo "string";
+		echo "$course_num $course_sched $course_loc";
 		$sql = 
 		"
-		UPDATE FROM courses
-		WHERE course_num = '$course_num' AND course_sched = '$course_sched' AND course_loc = '$course_loc';
-		";
+		UPDATE courses
+		SET course_sched = '$course_sched' AND course_loc = '$course_loc';
+		WHERE course_num = '$course_num'";
 		$query = mysql_query($sql);
 	}
 	

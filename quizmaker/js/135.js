@@ -3,7 +3,20 @@ function muModal(f)
   var form=f,
       modal=$('<div/>', {
     'id':'alert',
-    'html':'<iframe src="../html/edit.html" style="width:400px;"></iframe>'
+    'html':'<form action="updateCourses.php" method="POST">
+      <table id="courses">
+        <tr>
+            <td>
+              <input type="text" name="course-num" value="course number">
+            </td>
+            <td>
+              <input type="text" name="course-sched" value="schedule">
+            </td>
+            <td>
+              <input type="text" name="course-loc" value="location">
+            </td>
+        </tr>
+      </form>'
   })
   .dialog({
     'title':'Edit',
@@ -12,6 +25,7 @@ function muModal(f)
     'height':'auto',
     'buttons': {
       'OK': function() { 
+        post_to_url("../php/editTA.php", , "POST")
         $(this).dialog( "close" ); 
         // do something, maybe call form.submit();
       }
