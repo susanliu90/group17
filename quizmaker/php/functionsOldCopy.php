@@ -8,29 +8,25 @@
 		WHERE course_num = '$course_num';
 		";
 
-		$courses = mysql_query($sql);
-/*
-		while ($row = mysql_fetch_assoc($courses))
+		$result = mysql_query($sql);
+		while ($data = mysql_fetch_assoc($result))
 		{
 			//echo $data1["user_id"];
-			$course_num = $row["course_num"];
+			$course_numResult = $data["course_num"];
 		}
-*/
-		$num_rows = mysql_num_rows($courses);
 
-/* 		echo "course num: $course_num <br>"; */
-/* 		echo "NUM ROWS: $num_rows<BR>"; */
+		//echo "$course_numResult <br>";
 
-		if (!$num_rows)
+		if (!$course_numResult)
 		{
 			echo 
 			"
 				<script>
 			   if (window.confirm('Course does not exist. Click either button to go back.')) {
-			        window.location.href='../html/addtas.php';
+			        window.location.href='../html/addtas.html';
 			    }
 			    else
-			    	window.location.href='../html/addtas.php';
+			    	window.location.href='../html/addtas.html';
 				</script>
 			";
 			return false;
@@ -43,26 +39,22 @@
 		$sql =
 		"
 		SELECT * FROM tas
-		WHERE ta_id = '$ta_id';
+		WHERE ta_id = $ta_id;
 		";
 
-		$tas = mysql_query($sql);
-		$num_rows = mysql_num_rows($tas);
+		$result = mysql_query($sql);
 
-/* 		echo "tas: $ta_id <br>"; */
-/* 		echo "NUM ROWS: $num_rows<BR>"; */
-
-		if (!$tas)
+		if ($result)
 		{
-/* 			echo "slalalalala<br>"; */
+			echo "slalalalala";
 			echo
 			"
 				<script>
 				    if (window.confirm('TA already exists. Click either button to go back.')) {
-				        window.location.href='../html/addtas.php';
+				        window.location.href='../html/addtas.html';
 				    }
 				    else
-				    	window.location.href='../html/addtas.php';
+				    	window.location.href='../html/addtas.html';
 				</script>
 			";
 			return false;
@@ -70,34 +62,39 @@
 		else{
 			//echo "got here 2.";
 			return true;
-		}
-
-
+		}			
 	}
 
-		/*
+
 	function exp($prof_id)
 	{
 		$sql =
 		"
 		SELECT * FROM professors
-		WHERE prof_id = $prof_id;
+		WHERE prof_id = '$prof_id';
 		";
 
-		$result = mysql_query($sql);
-
-		if (!$result)
+		if ($result)
 		{
-			echo 
+			echo "slalalalala";
+			echo
 			"
-			<script type='text/javascript'>
-				alert('Professor does not exist. Please try again.');
-			</script>
+				<script>
+				    if (window.confirm('TA already exists. Click either button to go back.')) {
+				        window.location.href='../html/addtas.html';
+				    }
+				    else
+				    	window.location.href='../html/addtas.html';
+				</script>
 			";
-			exit(1);
+			return false;
 		}
+		else{
+			//echo "got here 2.";
+			return true;
+		}		
 	}
-	*/
+
 
 
 	/*

@@ -143,12 +143,9 @@
 					<th class="span1 align-center roster-title">F</td>
 				</tr>
 				<tr>
-					<td class="align-center">
-						<select>
-							<option value="CSE 134B">CSE 134B</option>
-							<option value="CSE 135">CSE 135</option>
-							<option value="CSE 136">CSE 136</option>
-						</select>
+					<form action="../php/insertGradeScheme.php" method="POST">
+					<td class="align-center">			
+							<input type="text"  name="course_num" placeholder="CSE 130">
 					</td>
 					<td class="align-center">
 						<input type="text" class="input-grade" name="aplus" placeholder="97">
@@ -186,9 +183,10 @@
 				</tr>
 				<tr>
 					<td>
-						<input type="button" class="btn btn-primary" value="Set Grades">
+						<input type="submit" class="btn btn-primary" value="Set Grades">
 					</td>
 				</tr>
+				</form>
 			</table>
 		</div>
 		<div class="hero-unit">
@@ -211,130 +209,7 @@
 					<th class="span2 align-center roster-title"></td>
 				</tr>
 				<tr>
-					<td class="align-center">
-						CSE 134B
-					</td>
-					<td class="align-center">
-						97
-					</td>
-					<td class="align-center">
-						93
-					</td>
-					<td class="align-center">
-						90
-					</td>
-					<td class="align-center">
-						87
-					</td>
-					<td class="align-center">
-						84
-					</td>
-					<td class="align-center">
-						80
-					</td>
-					<td class="align-center">
-						77
-					</td>
-					<td class="align-center">
-						74
-					</td>
-					<td class="align-center">
-						70
-					</td>
-					<td class="align-center">
-						60
-					</td>
-					<td class="align-center">
-						50
-					</td>
-					<td class="align-center">
-						<input type="button" class="btn btn-primary btn-small" value="Edit">
-					</td>
-					<td class="align-center"><a href="#"><i class="icon-trash"></i></a></td>
-				</tr>
-				<tr>
-					<td class="align-center">
-						CSE 135
-					</td>
-					<td class="align-center">
-						97
-					</td>
-					<td class="align-center">
-						93
-					</td>
-					<td class="align-center">
-						90
-					</td>
-					<td class="align-center">
-						87
-					</td>
-					<td class="align-center">
-						84
-					</td>
-					<td class="align-center">
-						80
-					</td>
-					<td class="align-center">
-						77
-					</td>
-					<td class="align-center">
-						74
-					</td>
-					<td class="align-center">
-						70
-					</td>
-					<td class="align-center">
-						60
-					</td>
-					<td class="align-center">
-						50
-					</td>
-					<td class="align-center">
-						<input type="button" class="btn btn-primary btn-small" value="Edit">
-					</td>
-					<td class="align-center"><a href="#"><i class="icon-trash"></i></a></td>
-				</tr>
-				<tr>
-					<td class="align-center">
-						CSE 136
-					</td>
-					<td class="align-center">
-						97
-					</td>
-					<td class="align-center">
-						93
-					</td>
-					<td class="align-center">
-						90
-					</td>
-					<td class="align-center">
-						87
-					</td>
-					<td class="align-center">
-						84
-					</td>
-					<td class="align-center">
-						80
-					</td>
-					<td class="align-center">
-						77
-					</td>
-					<td class="align-center">
-						74
-					</td>
-					<td class="align-center">
-						70
-					</td>
-					<td class="align-center">
-						60
-					</td>
-					<td class="align-center">
-						50
-					</td>
-					<td class="align-center">
-						<input type="button" class="btn btn-primary btn-small" value="Edit">
-					</td>
-					<td class="align-center"><a href="#"><i class="icon-trash"></i></a></td>
+					<td><?php include '../php/displayGrades.php';?></td>
 				</tr>
 			</table>
 		</div>

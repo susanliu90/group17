@@ -15,30 +15,19 @@
 
 	$ta = "SELECT * FROM users WHERE level = 'TA';";
 	$tas = mysql_query($ta);
-
-	// $course_num = "SELECT * FROM users WHERE level = 'TA';";
-	// $tas = mysql_query($sql);
-
+	
 	while ($row = mysql_fetch_array($tas, MYSQL_ASSOC))
 	{
+		$user_id = $row['user_id'];
 		$firstName = $row['firstname'];
 		$lastName = $row['lastname'];
 		$email = $row['email'];
+		
+		$query = "SELECT course_num FROM tas WHERE user_id = $user_id LIMIT 0,1;";
+		list($course_num) = mysql_query($query);
 
 		echo "<tr>
-<<<<<<< HEAD
-<<<<<<< HEAD
-				<td id=>" . $firstName $lastName . "</td>
-				<td>" . $email . "</td>
-				<td>" s. $course_num . "</td>
-			</tr>";
-=======
-			<td>".$firstName." ".$lastName."</td>
-			<td>".$email."</td>
-			<td>".$course_num."</td>
-		</tr>";
->>>>>>> aa41b7bfaaec6c1270937d569a6a67f63baa4948
-=======
+
 			<td class=\"span3 align-center\">".$firstName." ".$lastName."</td>
 			<td class=\"span3 align-center\">".$email."</td>
 			<td class=\"span3 align-center\">".$course_num."</td>
@@ -47,7 +36,6 @@
 			</td>
 			<td class=\"span3 align-center\"><a href=\"#\"><i class=\"icon-trash\"></i></a></td>
 			</tr>";
->>>>>>> 6291e81ec99b341db45a12999349f201d81f7166
 	}
 
 	mysql_close();

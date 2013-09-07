@@ -15,46 +15,55 @@
 	    or die("Unable to select database: " . mysql_error());
 
 	// GRAB THE POST INFORMATION
-	$email = $_POST["email"];
-	$course_num = $_POST["course_num"];
-
+	$email	     = $_POST["email"];
+	$course_num  = $_POST["course_num"];
+	
 	//echo "$course_num";
-
+	
 	// CONSTRUCT THE SQL QUERY TO CHECK EXISTENCE OF TA
 	$sql = 
+	"
+	SELECT email FROM users
+	WHERE email = '$email';
+	";
+	$result = mysql_query($sql);
+	$data = mysql_fetch_array($result);
+	
+	
+	$ID = 
 	"
 	SELECT user_id FROM users
 	WHERE email = '$email';
 	";
-	$user_ids = mysql_query($sql);
-	while ($row = mysql_fetch_assoc($user_ids, MYSQL_ASSOC))
+	
+	
+	$result1 = mysql_query($ID);
+	while ($data1 = mysql_fetch_assoc($result1))
 	{
 		//echo $data1["user_id"];
-		$user_id = $row["user_id"];
+		$user_id = $data1["user_id"];
 	}
-
-/* 	echo "User ID: $user_id<BR>"; */
 
 	$dup_ta =
 	"
 	SELECT ta_id FROM tas
 	WHERE user_id = '$user_id';
 	";
-	$result = mysql_query($dup_ta);
-	while ($row = mysql_fetch_assoc($result))
+	$result2 = mysql_query($dup_ta);
+	while ($data2 = mysql_fetch_assoc($result2))
 	{
 		//echo $data1["user_id"];
-		$ta_id = $row["ta_id"];
+		$ta_id = $data2["ta_id"];
 	}
-
-/* 	echo "TA ID: $ta_id<BR>"; */
-
+	
+	//echo "$ta_id";
+	
 	//if there is no duplicate. if the user_id is blank.
 	//we are inserting user_id but we dont prompt the user for user_id
-	if($user_id)
+	if("".$data['email'] == $email)
 	{
-
-/* 		echo "hi<br>"; */
+	
+		//echo "hi<br>";
 		//echo $course_num;
 		if ( exc($course_num) )
 		{
@@ -90,7 +99,7 @@
 	}
 	// REDIRECT USER TO SAME PAGE AFTER SUBMISSION
 	header("Location: ../html/addtas.php");
-
+	
 	// CLOSE THE SQL CONNECTION
 	mysql_close();
 ?>

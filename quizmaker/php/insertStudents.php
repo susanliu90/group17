@@ -28,63 +28,57 @@
 	";
 	$result = mysql_query($sql);
 	$data = mysql_fetch_array($result);
-	
-	
 	$ID = 
 	"
 	SELECT user_id FROM users
 	WHERE email = '$email';
 	";
 	
-	
 	$result1 = mysql_query($ID);
-	while ($data1 = mysql_fetch_assoc($result1))
-	{
-		//echo $data1["user_id"];
-		$user_id = $data1["user_id"];
-	}
-
-	$dup_ta =
+	$data1 = mysql_fetch_assoc($result1);
+	$user_id = $data1["user_id"];
+	$dup_student =
 	"
-	SELECT ta_id FROM tas
+	SELECT student_id FROM students
 	WHERE user_id = '$user_id';
 	";
-	$result2 = mysql_query($dup_ta);
-	while ($data2 = mysql_fetch_assoc($result2))
+	$result2 = mysql_query($dup_student);
+	$row_count = mysql_num_rows($result2);
+	if($row_count != 0) 
 	{
-		//echo $data1["user_id"];
-		$ta_id = $data2["ta_id"];
+		echo 
+		"
+		<script type='text/javascript'>
+			alert('Student with user_id already exists.');
+		</script>
+		";
+		exit(1);
 	}
-	
-	//echo "$ta_id";
+	$data2 = mysql_fetch_assoc($result2);
+	echo "$data2";
+	$student_id = $data2["student_id"];
 	
 	//if there is no duplicate. if the user_id is blank.
 	//we are inserting user_id but we dont prompt the user for user_id
 	if("".$data['email'] == $email)
 	{
-	
-		//echo "hi<br>";
-		//echo $course_num;
-		if ( exc($course_num) )
+		if (exc($course_num))
 		{
-			//echo "course num : $course_num  <br>";
-			if( ext($ta_id) )
-			{
-				//echo "got here 1";
-				// CONSTRUCT THE SQL QUERY TO INSERT NEW TA
-				$sql = 
-				"
-				INSERT INTO tas (
-					user_id,
-					course_num
-				) 
-				VALUES (
-					'$user_id', 
-					'$course_num'
-				);
-				"; 	
-				$result = mysql_query($sql);	
-			}	
+			// CONSTRUCT THE SQL QUERY TO INSERT NEW STUDENT
+			$sql = 
+			"
+			INSERT INTO students (
+				user_id,
+				course_num,
+				grades_id
+			) 
+			VALUES (
+				'$user_id', 
+				'$course_num',
+				'null'
+			);
+			"; 	
+			$result = mysql_query($sql);	
 		}		
 	}
 	else //this is if there is a duplicate
@@ -92,13 +86,13 @@
 		echo 
 			"
 			<script type='text/javascript'>
-				alert('User does not exist. Please create become a User first.');
+				alert('User does not exist. Please create a User first.');
 			</script>
 			";
 
 	}
 	// REDIRECT USER TO SAME PAGE AFTER SUBMISSION
-	header("Location: ../html/addtas.php");
+	header("Location: ../html/addstudents.php");
 	
 	// CLOSE THE SQL CONNECTION
 	mysql_close();
