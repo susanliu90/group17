@@ -36,13 +36,15 @@
 						.$course_loc.
 					"</td>
 					<td class=\"span2 align-center\">
-						<input type=\"button\" class=\"btn btn-primary btn-small\" value=\"Edit\">
+						<form method=\"post\" action=\"../php/edit.php\" onsubmit=\"return muModal(this)\">
+						  <input type=\"submit\" class=\"btn btn-primary btn-small\" value=\"Edit\">
+						</form>
 					</td>
 					<td class=\"span2 align-center\">
 						<form action=\"../php/deleteCourse.php\" method=\"POST\">
-							<input type=\"hidden\" name=\"".$course_num."\" value=\"".$course_num."\">
-							<input type=\"hidden\" name=\"".$course_sched."\" value=\"".$course_sched."\">
-							<input type=\"hidden\" name=\"".$course_loc."\" value=\"".$course_loc."\">
+							<input type=\"hidden\" name=\"course_num\" value=\"".$course_num."\">
+							<input type=\"hidden\" name=\"course_sched\" value=\"".$course_sched."\">
+							<input type=\"hidden\" name=\"course_loc\" value=\"".$course_loc."\">
 							<input type=\"submit\" class=\"btn btn-primary btn-small\" value=\"Delete\">
 						</form>
 					</td>
